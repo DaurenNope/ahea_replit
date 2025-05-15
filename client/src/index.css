@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'URW Gothic';
+  src: url('https://db.onlinewebfonts.com/t/da2945dd7e8a8b160c3bc036a0287b73.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/da2945dd7e8a8b160c3bc036a0287b73.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'URW Gothic';
+  src: url('https://db.onlinewebfonts.com/t/ec3f8134d1fc68f3460a5c0e76aeada8.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/ec3f8134d1fc68f3460a5c0e76aeada8.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'URW Gothic';
+  src: url('https://db.onlinewebfonts.com/t/dbc23702df9e9ded46ac5802fa43583e.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/dbc23702df9e9ded46ac5802fa43583e.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  
+  /* AHEU Brand Colors */
+  --primary: 158 100% 7%; /* #003826 */
+  --primary-foreground: 0 0% 100%; /* white */
+  --secondary: 157 100% 20%; /* #006343 */
+  --secondary-foreground: 0 0% 100%; /* white */
+  
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 158 100% 7%;
+  
+  /* AHEU Neutral Colors */
+  --aheu-neutral-light: 210 16.7% 97.6%; /* #F8F9FA */
+  --aheu-neutral-medium: 210 14.3% 93.5%; /* #E9ECEF */
+  --aheu-neutral-dark: 210 10.3% 22.7%; /* #343A40 */
+  --aheu-neutral-darker: 210 10.7% 14.5%; /* #212529 */
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 20 14.3% 4.1%;
+  --foreground: 60 9.1% 97.8%;
+  --muted: 12 6.5% 15.1%;
+  --muted-foreground: 24 5.4% 63.9%;
+  --popover: 20 14.3% 4.1%;
+  --popover-foreground: 60 9.1% 97.8%;
+  --card: 20 14.3% 4.1%;
+  --card-foreground: 60 9.1% 97.8%;
+  --border: 12 6.5% 15.1%;
+  --input: 12 6.5% 15.1%;
+  --primary: 158 100% 7%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 157 100% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 12 6.5% 15.1%;
+  --accent-foreground: 60 9.1% 97.8%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 158 100% 7%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'URW Gothic', 'Segoe UI', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .dropdown-menu {
+    @apply hidden absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 transition-all py-1;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    @apply block;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-primary/60;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-aheu-neutral-darker;
+  }
+  
+  .section-subtitle {
+    @apply max-w-3xl mx-auto text-lg text-aheu-neutral-dark mb-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-secondary text-white font-medium px-6 py-3 rounded transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded font-medium transition-colors;
+  }
+  
+  .btn-white {
+    @apply bg-white text-primary hover:bg-aheu-neutral-light px-6 py-3 rounded font-medium transition-colors;
+  }
+}

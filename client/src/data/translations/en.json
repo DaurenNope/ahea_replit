@@ -1,0 +1,701 @@
+{
+  "common": {
+    "universityName": "Almaty Humanitarian Economic University",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "details": "Details",
+    "apply": "Apply Now",
+    "explore": "Explore"
+  },
+  "nav": {
+    "about": "About",
+    "missionVision": "Mission & Vision",
+    "historyHeritage": "History & Heritage",
+    "leadership": "Leadership",
+    "accreditation": "Accreditation",
+    "rankings": "Rankings",
+    "contactUs": "Contact Us",
+    "admissions": "Admissions",
+    "howToApply": "How to Apply",
+    "undergraduate": "Undergraduate",
+    "graduate": "Graduate",
+    "international": "International",
+    "tuitionScholarships": "Tuition & Scholarships",
+    "faq": "FAQ",
+    "institutes": "Institutes",
+    "pedagogyInstitute": "Institute of Pedagogy, Business and Law",
+    "economicsInstitute": "Institute of Economics, Statistics and IT",
+    "symbatInstitute": "\"Symbat\" Institute of Design and Technology",
+    "allPrograms": "All Programs",
+    "studentLife": "Student Life",
+    "campusLife": "Campus Life",
+    "accommodation": "Accommodation",
+    "sportsRecreation": "Sports & Recreation",
+    "clubsSocieties": "Clubs & Societies",
+    "internationalStudents": "International Students",
+    "globalPartners": "Global Partners",
+    "exchangePrograms": "Exchange Programs",
+    "turkishCenter": "Turkish Education Center",
+    "newsEvents": "News & Events"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to AHEU University",
+      "subtitle": "Shaping tomorrow's leaders through quality education, innovation, and global perspective",
+      "primaryButton": "Apply Now",
+      "secondaryButton": "Explore Programs",
+      "announcement": "Academic year 2023-2024 admissions are now open"
+    },
+    "callToAction": {
+      "title": "Begin Your Journey at AHEU",
+      "description": "Join our diverse community in Almaty, Kazakhstan's cultural and economic hub, and experience quality education with global perspectives.",
+      "primaryButton": "Apply Now",
+      "secondaryButton": "Request Information"
+    }
+  },
+  "institutes": {
+    "pageTitle": "Our Institutes",
+    "pageDescription": "Discover AHEU's three specialized institutes offering diverse academic programs in pedagogy, business, law, economics, statistics, IT, design and technology.",
+    "hero": {
+      "title": "Academic Institutes",
+      "subtitle": "Excellence in specialized education through our three institutes"
+    },
+    "sectionTitle": "Our Institutes",
+    "sectionSubtitle": "AHEU offers diverse academic programs through three specialized institutes, each focusing on distinct fields of study",
+    "programs": "Programs",
+    "viewAllPrograms": "View All Programs",
+    "quickFacts": "Quick Facts",
+    "programsOffered": "Programs Offered",
+    "students": "Students",
+    "faculty": "Faculty",
+    "established": "Established",
+    "keyFocusAreas": "Key Focus Areas",
+    "callToAction": {
+      "title": "Find Your Program",
+      "description": "Explore our diverse range of programs across all three institutes to find the perfect fit for your academic and career goals.",
+      "primaryButton": "Browse All Programs",
+      "secondaryButton": "Contact an Advisor"
+    },
+    "pedagogy": {
+      "name": "Institute of Pedagogy, Business and Law",
+      "shortName": "Pedagogy, Business & Law",
+      "imageAlt": "Students in a business lecture hall",
+      "shortDescription": "Training specialists in education, business management, and legal studies with an emphasis on practical skills.",
+      "description1": "The Institute of Pedagogy, Business and Law is dedicated to preparing professionals in the fields of education, business administration, and legal studies. Our programs combine theoretical knowledge with practical applications to ensure graduates are ready for the demands of their chosen careers.",
+      "description2": "With a faculty of experienced educators, business professionals, and legal experts, the institute provides a rich learning environment that encourages critical thinking, ethical decision-making, and leadership development.",
+      "focusAreas": {
+        "area1": "Educational Management and Leadership",
+        "area2": "Business Administration and Entrepreneurship",
+        "area3": "Corporate and International Law",
+        "area4": "Pedagogy and Educational Psychology",
+        "area5": "Public Administration and Governance"
+      }
+    },
+    "economics": {
+      "name": "Institute of Economics, Statistics and IT Technologies",
+      "shortName": "Economics, Statistics & IT",
+      "imageAlt": "Students in an IT computer laboratory",
+      "shortDescription": "Developing professionals in economics, statistics, data science, and information technology for the digital economy.",
+      "description1": "The Institute of Economics, Statistics and IT Technologies prepares students for careers in the rapidly evolving fields of economics, data analysis, and information technology. Our programs emphasize analytical skills, technological proficiency, and economic reasoning.",
+      "description2": "The institute prides itself on staying at the forefront of technological advancements and economic research, ensuring our graduates are equipped with cutting-edge knowledge and skills valued by employers in both the public and private sectors.",
+      "focusAreas": {
+        "area1": "Economic Analysis and Forecasting",
+        "area2": "Statistical Modeling and Data Science",
+        "area3": "Information Systems and Technology",
+        "area4": "Financial Analytics and Management",
+        "area5": "Digital Economy and Innovation"
+      }
+    },
+    "symbat": {
+      "name": "\"Symbat\" Institute of Design and Technology",
+      "shortName": "Design & Technology",
+      "imageAlt": "Design students working in a studio",
+      "shortDescription": "Fostering creativity and innovation in design, fashion, textiles, and technology for the creative industries.",
+      "description1": "The \"Symbat\" Institute of Design and Technology is a center for creative excellence, where artistic vision meets practical application. Our programs nurture creative talent while providing the technical skills needed for success in design, fashion, and related industries.",
+      "description2": "With state-of-the-art design studios, technology labs, and experienced faculty from the creative industries, Symbat offers a dynamic learning environment that encourages experimentation, innovation, and professional development.",
+      "focusAreas": {
+        "area1": "Fashion Design and Textile Technology",
+        "area2": "Interior and Environmental Design",
+        "area3": "Graphic Design and Visual Communication",
+        "area4": "Sustainable Design Practices",
+        "area5": "Design Management and Entrepreneurship"
+      }
+    }
+  },
+  "programs": {
+    "pageTitle": "Academic Programs",
+    "pageDescription": "Explore AHEU's comprehensive range of undergraduate and graduate programs across our three specialized institutes.",
+    "hero": {
+      "title": "Academic Programs",
+      "subtitle": "Discover your path to success through our diverse range of degree programs"
+    },
+    "sectionTitle": "Our Programs",
+    "sectionSubtitle": "Discover our diverse range of undergraduate and graduate programs across disciplines",
+    "catalogTitle": "Program Catalog",
+    "catalogSubtitle": "Browse through our comprehensive collection of academic programs",
+    "all": "All",
+    "bachelor": "Bachelor's",
+    "master": "Master's",
+    "phd": "PhD",
+    "search": "Search",
+    "searchPlaceholder": "Search by program name...",
+    "filterByLevel": "Filter by Level",
+    "filterByInstitute": "Filter by Institute",
+    "selectLevel": "Select level",
+    "selectInstitute": "Select institute",
+    "allInstitutes": "All Institutes",
+    "showingResults": "Showing {{count}} programs",
+    "browseAll": "Browse All {{count}} Programs",
+    "noResults": {
+      "title": "No Programs Found",
+      "message": "Please try adjusting your search criteria or filters."
+    },
+    "items": {
+      "business-administration": {
+        "title": "Business Administration",
+        "description": "A comprehensive program preparing future business leaders with essential management skills and strategic thinking."
+      },
+      "law": {
+        "title": "Law",
+        "description": "Develop legal expertise through a program that combines theoretical foundations with practical legal skills."
+      },
+      "education": {
+        "title": "Education",
+        "description": "Prepare for a career in teaching and education with a focus on modern pedagogical approaches and methodologies."
+      },
+      "psychology": {
+        "title": "Psychology",
+        "description": "Study human behavior and mental processes to prepare for careers in counseling, education, or organizational settings."
+      },
+      "education-leadership": {
+        "title": "Education Leadership",
+        "description": "Prepare to lead educational institutions with advanced knowledge in educational policy, management, and innovation."
+      },
+      "business-management": {
+        "title": "Business Management",
+        "description": "Develop advanced business administration skills with specialized knowledge in organizational leadership and strategy."
+      },
+      "legal-studies": {
+        "title": "Legal Studies",
+        "description": "Gain in-depth knowledge of legal frameworks and specializations with an emphasis on application to real-world contexts."
+      },
+      "educational-psychology": {
+        "title": "Educational Psychology",
+        "description": "Conduct research in learning processes and educational development to advance the field of educational psychology."
+      },
+      "computer-science": {
+        "title": "Computer Science",
+        "description": "Learn programming, algorithms, and software development with a focus on practical applications in various industries."
+      },
+      "economics": {
+        "title": "Economics",
+        "description": "Develop an understanding of economic principles and their application to business, policy, and global contexts."
+      },
+      "finance": {
+        "title": "Finance",
+        "description": "Study financial principles, markets, and instruments to prepare for careers in financial management and analysis."
+      },
+      "statistics": {
+        "title": "Statistics",
+        "description": "Learn to collect, analyze, and interpret data to inform decision-making in various sectors."
+      },
+      "economics-advanced": {
+        "title": "Economics",
+        "description": "Advanced study of economic theories, models, and their applications to contemporary global economic challenges."
+      },
+      "data-science": {
+        "title": "Data Science",
+        "description": "Master the skills needed to analyze complex data sets, develop predictive models, and extract actionable insights."
+      },
+      "information-systems": {
+        "title": "Information Systems",
+        "description": "Develop expertise in designing and managing information systems to address organizational needs and challenges."
+      },
+      "economics-doctorate": {
+        "title": "Economics",
+        "description": "Conduct original research in economic theory and practice to contribute to the advancement of the field."
+      },
+      "fashion-design": {
+        "title": "Fashion Design",
+        "description": "Develop creative and technical skills needed for a successful career in the dynamic fashion industry."
+      },
+      "interior-design": {
+        "title": "Interior Design",
+        "description": "Learn to create functional and aesthetically pleasing interior spaces for commercial and residential settings."
+      },
+      "graphic-design": {
+        "title": "Graphic Design",
+        "description": "Develop visual communication skills through the study of design principles, typography, and digital media."
+      },
+      "textile-technology": {
+        "title": "Textile Technology",
+        "description": "Study the science and technology of textile production, processing, and innovation for various applications."
+      },
+      "fashion-design-advanced": {
+        "title": "Fashion Design",
+        "description": "Advance your design expertise with specialized knowledge in sustainable fashion, innovation, and brand development."
+      },
+      "interior-design-advanced": {
+        "title": "Interior Design",
+        "description": "Advance your design expertise focusing on sustainability, innovation, and creating functional, aesthetic interior spaces."
+      },
+      "design-studies": {
+        "title": "Design Studies",
+        "description": "Conduct original research in design theory and practice to contribute to the advancement of the field."
+      }
+    }
+  },
+  "features": {
+    "sectionTitle": "Why Choose AHEU",
+    "sectionSubtitle": "Experience quality education and holistic development at one of Kazakhstan's leading universities",
+    "accredited": {
+      "title": "Accredited Programs",
+      "description": "All our programs are nationally accredited and recognized internationally"
+    },
+    "faculty": {
+      "title": "Expert Faculty",
+      "description": "Learn from 335 qualified professors and practitioners in their fields"
+    },
+    "international": {
+      "title": "International Partnerships",
+      "description": "Collaborations with over 40 universities worldwide for exchange programs"
+    },
+    "career": {
+      "title": "Career Success",
+      "description": "High employment rate with graduates working in leading organizations"
+    }
+  },
+  "international": {
+    "sectionTitle": "Global Opportunities",
+    "turkishCenter": {
+      "title": "Turkish Education, Science and Culture Center",
+      "subtitle": "A collaboration between AHEU and Düzce University offering:",
+      "features": {
+        "language": "Free Turkish language courses",
+        "minor": "Minor programs in Turkish studies",
+        "mobility": "Academic mobility programs",
+        "diploma": "Dual diploma opportunities"
+      }
+    },
+    "partnerships": {
+      "title": "International Partnerships",
+      "subtitle": "AHEU has established partnerships with over 40 universities worldwide, providing students with opportunities for:",
+      "features": {
+        "exchange": "Exchange programs through Erasmus+",
+        "semester": "Semester abroad experiences",
+        "degree": "Double degree opportunities",
+        "research": "International research collaborations"
+      },
+      "cta": "Explore Partnerships"
+    }
+  },
+  "campusLife": {
+    "sectionTitle": "Campus Life",
+    "sectionSubtitle": "Experience a vibrant student community with numerous opportunities for personal growth",
+    "items": {
+      "clubs": {
+        "title": "Student Clubs",
+        "description": "Join our diverse range of academic, cultural, and recreational clubs",
+        "imageAlt": "Student clubs and activities"
+      },
+      "sports": {
+        "title": "Sports & Recreation",
+        "description": "State-of-the-art sports facilities including our Kapchagay sports complex",
+        "imageAlt": "Sports and recreation facilities"
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "description": "Comfortable and affordable on-campus housing options for students",
+        "imageAlt": "Student dormitories and accommodations"
+      }
+    }
+  },
+  "newsEvents": {
+    "sectionTitle": "News & Events",
+    "sectionSubtitle": "Stay updated with the latest happenings at AHEU",
+    "upcomingEvents": "Upcoming Events",
+    "viewAllEvents": "View All Events",
+    "news": {
+      "graduation": {
+        "title": "Spring 2023 Graduation Ceremony",
+        "excerpt": "Over 500 students received their diplomas at this year's spring graduation ceremony...",
+        "imageAlt": "AHEU graduation ceremony"
+      },
+      "research": {
+        "title": "International Research Symposium",
+        "excerpt": "AHEU hosted researchers from 15 countries to discuss innovations in sustainable development...",
+        "imageAlt": "International research conference"
+      },
+      "design": {
+        "title": "Symbat Design Exhibition",
+        "excerpt": "Students from the Symbat Institute showcased their innovative design projects to industry professionals...",
+        "imageAlt": "Student design exhibition"
+      },
+      "turkish-center": {
+        "title": "New Turkish Language Courses Launched",
+        "excerpt": "The Turkish Education Center has launched new free language courses open to all students...",
+        "imageAlt": "Turkish language course inauguration"
+      },
+      "international-conference": {
+        "title": "International Education Conference",
+        "excerpt": "Educators from across Central Asia gathered at AHEU to discuss the future of higher education...",
+        "imageAlt": "International education conference"
+      },
+      "award": {
+        "title": "AHEU Receives National Excellence Award",
+        "excerpt": "Our university has been recognized for outstanding contributions to education in Kazakhstan...",
+        "imageAlt": "AHEU receiving national award"
+      }
+    },
+    "events": {
+      "open-house": {
+        "title": "Open House Day"
+      },
+      "orientation": {
+        "title": "International Student Orientation"
+      },
+      "summer-school": {
+        "title": "Summer School: Business Leadership"
+      },
+      "webinar": {
+        "title": "Online Admissions Webinar"
+      },
+      "faculty-conference": {
+        "title": "Faculty Research Conference"
+      },
+      "welcome-day": {
+        "title": "New Student Welcome Day"
+      }
+    }
+  },
+  "callToAction": {
+    "title": "Begin Your Journey at AHEU",
+    "description": "Join our diverse community in Almaty, Kazakhstan's cultural and economic hub, and experience quality education with global perspectives.",
+    "primaryButton": "Apply Now",
+    "secondaryButton": "Request Information",
+    "imageAlt": "Almaty city skyline with mountains"
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageDescription": "Get in touch with Almaty Humanitarian Economic University. Find our location, contact information, and submit your inquiries.",
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We're here to answer your questions and provide the information you need"
+    },
+    "sectionTitle": "Contact Us",
+    "sectionSubtitle": "We're here to answer your questions about AHEU",
+    "form": {
+      "title": "Get in Touch",
+      "subtitle": "Fill out the form below to contact us. We'll respond as soon as possible.",
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "submitSuccess": "Message Sent",
+      "submitSuccessMessage": "Thank you for your message. We'll get back to you soon.",
+      "submitError": "Error",
+      "submitErrorMessage": "There was a problem sending your message. Please try again."
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "address": {
+        "title": "Address",
+        "city": "Almaty, Kazakhstan"
+      },
+      "phone": {
+        "title": "Phone"
+      },
+      "email": {
+        "title": "Email",
+        "admissions": "Admissions",
+        "general": "General Inquiries"
+      },
+      "hours": {
+        "title": "Office Hours",
+        "weekdays": "Monday - Friday",
+        "time": "9:00 AM - 6:00 PM"
+      }
+    },
+    "socialMedia": {
+      "title": "Connect With Us"
+    },
+    "location": {
+      "title": "Our Location",
+      "subtitle": "AHEU is conveniently located in the Aksay-3 microdistrict of Almaty",
+      "openInGoogleMaps": "Open in Google Maps"
+    },
+    "ourLocation": "Our Location",
+    "almatyKazakhstan": "Almaty, Kazakhstan",
+    "generalInquiries": "General Inquiries",
+    "admissions": "Admissions",
+    "internationalOffice": "International Office",
+    "officeHours": "Office Hours",
+    "mondayFriday": "Monday - Friday",
+    "workHours": "9:00 AM - 6:00 PM",
+    "email": "Email",
+    "phone": "Phone",
+    "contactForm": "Contact Form"
+  },
+  "about": {
+    "pageTitle": "About AHEU",
+    "pageDescription": "Learn about Almaty Humanitarian Economic University's mission, history, leadership, accreditation, and achievements.",
+    "hero": {
+      "title": "About AHEU",
+      "subtitle": "Delivering quality education and fostering innovation since 1995"
+    },
+    "tabs": {
+      "mission": "Mission & Vision",
+      "history": "History",
+      "leadership": "Leadership",
+      "accreditation": "Accreditation",
+      "rankings": "Rankings"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content1": "Almaty Humanitarian Economic University is dedicated to providing accessible, high-quality education that prepares students to be leaders in their fields, contributing to the economic and social development of Kazakhstan and the global community.",
+      "content2": "We strive to create an inclusive learning environment that fosters critical thinking, creativity, and ethical decision-making through innovative teaching methods, research opportunities, and practical experiences."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To be recognized as a leading educational institution in Central Asia, known for academic excellence, innovative research, and producing graduates who are prepared to meet the challenges of a rapidly changing world."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "excellence": "Excellence in teaching, research, and institutional operations",
+        "integrity": "Integrity and ethics in all academic and professional activities",
+        "innovation": "Innovation in curriculum development and teaching methodologies",
+        "diversity": "Diversity and inclusion in our academic community",
+        "sustainability": "Sustainability and social responsibility in all our endeavors"
+      }
+    },
+    "history": {
+      "title": "Our History",
+      "content1": "Established in 1995, Almaty Humanitarian Economic University has grown from a small institution focused on economics and business education to a comprehensive university offering a wide range of programs across three specialized institutes.",
+      "content2": "Throughout our history, we have remained committed to adapting to the changing needs of society and the job market, continually updating our programs and teaching methods to provide students with the knowledge and skills needed for success.",
+      "timeline": {
+        "founding": "University founding",
+        "expansion": "Expansion of programs",
+        "international": "International partnerships",
+        "restructuring": "Institute restructuring"
+      }
+    },
+    "leadership": {
+      "title": "Leadership",
+      "intro": "AHEU is led by distinguished academics and professionals committed to maintaining the highest standards of education and institutional excellence.",
+      "rector": {
+        "name": "Prof. Askar Nurbekov",
+        "title": "Rector",
+        "bio": "Professor Nurbekov has led AHEU since 2015. With over 30 years of experience in higher education, he has been instrumental in the university's development and international recognition. He holds a PhD in Economics from Moscow State University and has published extensively on economic development and education policy."
+      },
+      "viceRector": {
+        "name": "Dr. Elmira Suleimenova",
+        "title": "Vice Rector for Academic Affairs",
+        "bio": "Dr. Suleimenova oversees all academic programs and faculty development at AHEU. With a background in educational leadership and a PhD from Cambridge University, she has implemented numerous innovations in curriculum development and teaching methodologies."
+      }
+    },
+    "accreditation": {
+      "title": "Accreditation & Licensing",
+      "content1": "AHEU is fully accredited by the Ministry of Education and Science of the Republic of Kazakhstan and has received institutional and program accreditation from independent quality assurance agencies.",
+      "content2": "Our commitment to maintaining high academic standards is reflected in our ongoing process of self-assessment and external review.",
+      "bodies": {
+        "iaar": "Independent Agency for Accreditation and Rating",
+        "iqaa": "Independent Agency for Quality Assurance in Education",
+        "ministry": "Ministry of Education and Science",
+        "ministryDesc": "Official state licensing and recognition"
+      },
+      "licenseNumber": "License Number"
+    },
+    "rankings": {
+      "title": "Rankings & Recognition",
+      "content": "AHEU takes pride in its recognition among Kazakhstan's leading universities and continues to work toward higher international rankings.",
+      "items": {
+        "national": {
+          "title": "National Ranking",
+          "description": "AHEU is consistently ranked among the top 20 universities in Kazakhstan for humanities and economic education."
+        },
+        "qsRanking": {
+          "title": "QS Regional Ranking",
+          "description": "AHEU is included in the QS Eastern Europe and Central Asia University Rankings, recognizing our growing reputation in the region."
+        },
+        "programRankings": {
+          "title": "Program-Specific Rankings",
+          "description": "Several of our programs, particularly in business, economics, and design, are highly ranked nationally for graduate employment outcomes and academic quality."
+        }
+      }
+    },
+    "callToAction": {
+      "title": "Join Our Academic Community",
+      "description": "Experience the AHEU difference with our quality education, expert faculty, and vibrant campus environment.",
+      "primaryButton": "Apply Now",
+      "secondaryButton": "Take a Virtual Tour"
+    }
+  },
+  "admissions": {
+    "pageTitle": "Admissions",
+    "pageDescription": "Information about the application process, requirements, and deadlines for prospective students at Almaty Humanitarian Economic University.",
+    "hero": {
+      "title": "Admissions",
+      "subtitle": "Your journey to academic success begins here",
+      "primaryButton": "Start Your Application"
+    },
+    "whyChoose": {
+      "title": "Why Choose AHEU",
+      "subtitle": "Discover what sets AHEU apart and makes it the right choice for your education",
+      "reasons": {
+        "quality": {
+          "title": "Academic Excellence",
+          "description": "High-quality education recognized by national and international accreditation bodies"
+        },
+        "research": {
+          "title": "Research Opportunities",
+          "description": "Engage in meaningful research projects guided by experienced faculty members"
+        },
+        "global": {
+          "title": "Global Perspective",
+          "description": "International partnerships and exchange programs with 40+ universities worldwide"
+        }
+      }
+    },
+    "howToApply": {
+      "title": "How to Apply",
+      "subtitle": "Follow our step-by-step application process to join AHEU",
+      "tabs": {
+        "undergraduate": "Undergraduate",
+        "graduate": "Graduate",
+        "international": "International"
+      },
+      "undergraduate": {
+        "title": "Undergraduate Admissions",
+        "intro": "Join our bachelor's degree programs through the following process:",
+        "steps": {
+          "step1": {
+            "title": "Check Requirements",
+            "description": "Ensure you meet the admission requirements, including high school diploma and UNT scores."
+          },
+          "step2": {
+            "title": "Prepare Documents",
+            "description": "Gather your identification, educational certificates, and other required documents."
+          },
+          "step3": {
+            "title": "Submit Application",
+            "description": "Complete the online application form and upload all required documents."
+          },
+          "step4": {
+            "title": "Receive Decision",
+            "description": "Await the admissions committee's decision, which is typically made within 2-3 weeks."
+          }
+        }
+      },
+      "graduate": {
+        "title": "Graduate Admissions",
+        "intro": "Join our master's and doctoral programs through the following process:",
+        "steps": {
+          "step1": {
+            "title": "Check Requirements",
+            "description": "Ensure you meet the admission requirements, including bachelor's degree and entrance exam scores."
+          },
+          "step2": {
+            "title": "Prepare Documents",
+            "description": "Gather your identification, educational certificates, CV, and other required documents."
+          },
+          "step3": {
+            "title": "Submit Application",
+            "description": "Complete the online application form, upload all required documents, and pay the application fee."
+          }
+        }
+      },
+      "international": {
+        "title": "International Admissions",
+        "intro": "International students can join AHEU through the following process:",
+        "steps": {
+          "step1": {
+            "title": "Check Requirements",
+            "description": "Ensure you meet the admission requirements for international students, including educational qualifications and language proficiency."
+          },
+          "step2": {
+            "title": "Prepare Documents",
+            "description": "Gather your identification, educational certificates, language proficiency proof, and other required documents."
+          },
+          "step3": {
+            "title": "Submit Application",
+            "description": "Complete the online application form and upload all required documents."
+          },
+          "step4": {
+            "title": "Receive Acceptance Letter",
+            "description": "Once accepted, you will receive an official acceptance letter needed for visa application."
+          },
+          "step5": {
+            "title": "Apply for Visa",
+            "description": "Use the acceptance letter to apply for a student visa at the Kazakhstan embassy or consulate in your country."
+          }
+        }
+      },
+      "applyButton": "Apply Now"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about admissions at AHEU",
+      "questions": {
+        "q1": "What are the application deadlines?",
+        "q2": "Are scholarships available for international students?",
+        "q3": "What language proficiency is required?",
+        "q4": "Can I transfer credits from another university?",
+        "q5": "How do I apply for on-campus housing?"
+      },
+      "answers": {
+        "a1": "For fall semester admissions, applications should be submitted by June 30. For spring semester, the deadline is December 15. International students are encouraged to apply at least 3 months before these deadlines to allow time for visa processing.",
+        "a2": "Yes, AHEU offers several scholarships for international students based on academic merit, financial need, and country-specific agreements. The International Admissions Office can provide detailed information about available scholarships and application procedures.",
+        "a3": "Programs taught in English require an IELTS score of 6.0 or TOEFL iBT score of 75. Programs taught in Russian require a TORFL level 1 certificate. Kazakh-medium programs require documented proficiency in Kazakh. Language requirements may be waived for native speakers.",
+        "a4": "Yes, AHEU accepts transfer credits from accredited institutions. Credits are evaluated on a course-by-course basis by the relevant academic department. Official transcripts and course descriptions must be submitted for evaluation.",
+        "a5": "On-campus housing applications are submitted separately from admissions applications. Once accepted to AHEU, you can apply for housing through the Student Affairs Office. Housing is allocated on a first-come, first-served basis, so early application is recommended."
+      }
+    },
+    "callToAction": {
+      "title": "Ready to Apply?",
+      "description": "Take the first step toward your future at AHEU. Our admissions team is ready to assist you throughout the application process.",
+      "primaryButton": "Start Your Application",
+      "secondaryButton": "Contact Admissions"
+    }
+  },
+  "footer": {
+    "aboutAheu": "About AHEU",
+    "missionVision": "Mission & Vision",
+    "historyHeritage": "History & Heritage",
+    "leadership": "Leadership",
+    "accreditation": "Accreditation",
+    "rankings": "Rankings & Recognition",
+    "campusFacilities": "Campus Facilities",
+    "contactUs": "Contact Us",
+    "academics": "Academics",
+    "pedagogyInstitute": "Institute of Pedagogy, Business and Law",
+    "economicsInstitute": "Institute of Economics, Statistics and IT",
+    "symbatInstitute": "\"Symbat\" Institute of Design and Technology",
+    "bachelorPrograms": "Bachelor's Programs",
+    "masterPrograms": "Master's Programs",
+    "phdPrograms": "PhD Programs",
+    "academicCalendar": "Academic Calendar",
+    "studentLife": "Student Life",
+    "campusLife": "Campus Life",
+    "accommodation": "Accommodation",
+    "sportsRecreation": "Sports & Recreation",
+    "clubsSocieties": "Clubs & Societies",
+    "studentSupport": "Student Support",
+    "careerServices": "Career Services",
+    "library": "Library",
+    "connectWithUs": "Connect With Us",
+    "address": "Address",
+    "almatyKazakhstan": "Almaty, Kazakhstan",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "copyright": "2023 Almaty Humanitarian Economic University. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "sitemap": "Sitemap",
+    "accessibility": "Accessibility"
+  }
+}
