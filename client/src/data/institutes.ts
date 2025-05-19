@@ -5,6 +5,9 @@ export interface Institute {
   studentCount: number;
   facultyCount: number;
   established: number;
+  primaryColor?: string; // Institution-specific primary color
+  secondaryColor?: string; // Institution-specific secondary color
+  logoImage?: string; // Institution-specific logo
 }
 
 export const institutes: Institute[] = [
@@ -14,7 +17,10 @@ export const institutes: Institute[] = [
     programCount: 14,
     studentCount: 1200,
     facultyCount: 110,
-    established: 1997
+    established: 1997,
+    primaryColor: '#3b82f6', // Blue
+    secondaryColor: '#1e40af',
+    logoImage: '/logos/pedagogy-logo.png'
   },
   {
     id: 'economics',
@@ -22,7 +28,10 @@ export const institutes: Institute[] = [
     programCount: 13,
     studentCount: 950,
     facultyCount: 95,
-    established: 1998
+    established: 1998,
+    primaryColor: '#10b981', // Green
+    secondaryColor: '#065f46',
+    logoImage: '/logos/economics-logo.png'
   },
   {
     id: 'symbat',
@@ -30,6 +39,9 @@ export const institutes: Institute[] = [
     programCount: 12,
     studentCount: 850,
     facultyCount: 80,
-    established: 2003
+    established: 2003,
+    primaryColor: '#ec4899', // Pink
+    secondaryColor: '#be185d',
+    logoImage: '/logos/symbat-logo.png'
   }
 ];

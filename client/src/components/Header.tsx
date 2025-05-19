@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import MobileMenu from '@/components/MobileMenu';
 import { navLinks } from '@/data/navigation';
+import { institutes } from '@/data/institutes';
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -39,6 +40,30 @@ const Header: React.FC = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex space-x-6 text-aheu-neutral-darker">
+          {/* New "Institutions" dropdown */}
+          <div className="dropdown relative group">
+            <button className="py-2 hover:text-secondary flex items-center gap-1">
+              {t('nav.institutes')} 
+              <i className="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            
+            <div className="dropdown-menu">
+              <Link href="/" className="block px-4 py-2 hover:bg-aheu-neutral-light hover:text-primary">
+                {t('nav.landingPage', 'Landing Page')}
+              </Link>
+              {institutes.map((institute) => (
+                <Link 
+                  key={institute.id} 
+                  href={`/institutions/${institute.id}`} 
+                  className="block px-4 py-2 hover:bg-aheu-neutral-light hover:text-primary"
+                >
+                  {t(`institutes.${institute.id}.shortName`)}
+                </Link>
+              ))}
+            </div>
+          </div>
+          
+          {/* Regular Navigation Links */}
           {navLinks.map((navItem) => (
             <div key={navItem.id} className="dropdown relative group">
               <button className="py-2 hover:text-secondary flex items-center gap-1">

@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 
 // Pages
+import Landing from "@/pages/landing";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Admissions from "@/pages/admissions";
@@ -13,6 +14,10 @@ import Institutes from "@/pages/institutes";
 import Programs from "@/pages/programs";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
+
+// Institution pages
+import InstitutionHome from "@/pages/institutions/InstitutionHome";
+import InstitutionAbout from "@/pages/institutions/InstitutionAbout";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -29,12 +34,20 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={Home} />
+        {/* Main AHEU university routes */}
+        <Route path="/" component={Landing} />
+        <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/admissions" component={Admissions} />
         <Route path="/institutes" component={Institutes} />
         <Route path="/programs" component={Programs} />
         <Route path="/contact" component={Contact} />
+        
+        {/* Institution-specific routes */}
+        <Route path="/institutions/:id" component={InstitutionHome} />
+        <Route path="/institutions/:id/about" component={InstitutionAbout} />
+        
+        {/* 404 route */}
         <Route component={NotFound} />
       </Switch>
     </>
