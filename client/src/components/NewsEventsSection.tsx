@@ -1,65 +1,120 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
-import { newsItems, upcomingEvents } from '@/data/news';
-import { formatDate } from '@/lib/utils';
+import { news, events } from '@/data/news';
 
-const NewsEventsSection: React.FC = () => {
+interface NewsEventsSectionProps {
+  institutionId?: string;
+}
+
+const NewsEventsSection: React.FC<NewsEventsSectionProps> = ({ institutionId }) => {
   const { t } = useTranslation();
   
+  // Filter news and events by institution if institutionId is provided
+  const filteredNews = institutionId
+    ? news.filter(item => item.institute === institutionId || item.institute === 'all')
+    : news;
+    
+  const filteredEvents = institutionId
+    ? events.filter(item => item.institute === institutionId || item.institute === 'all')
+    : events;
+  
+  // Get the latest 3 news and events
+  const latestNews = filteredNews.slice(0, 3);
+  const upcomingEvents = filteredEvents.slice(0, 3);
+  
   return (
-    <section className="py-16 bg-aheu-neutral-light">
+    <section className="py-16 bg-aheu-neutral-lighter">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title">{t('newsEvents.sectionTitle')}</h2>
-          <p className="section-subtitle">{t('newsEvents.sectionSubtitle')}</p>
+          <h2 className="section-title">
+            {institutionId 
+              ? t(`institutes.${institutionId}.newsEventsTitle`, t('news.sectionTitle'))
+              : t('news.sectionTitle')}
+          </h2>
+          <p className="section-subtitle">
+            {institutionId
+              ? t(`institutes.${institutionId}.newsEventsSubtitle`, t('news.sectionSubtitle')) 
+              : t('news.sectionSubtitle')}
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* News Items */}
-          {newsItems.slice(0, 3).map((item) => (
-            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <img 
-                src={`https://images.unsplash.com/${item.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400`} 
-                alt={t(`newsEvents.news.${item.id}.imageAlt`)} 
-                className="w-full h-48 object-cover" 
-              />
-              <div className="p-5">
-                <div className="flex items-center text-sm text-aheu-neutral-dark mb-3">
-                  <i className="far fa-calendar-alt mr-2"></i> {formatDate(item.date)}
-                </div>
-                <h3 className="font-bold text-lg mb-2">{t(`newsEvents.news.${item.id}.title`)}</h3>
-                <p className="text-sm text-aheu-neutral-dark mb-4">{t(`newsEvents.news.${item.id}.excerpt`)}</p>
-                <Link href={`/news/${item.id}`}>
-                  <a className="text-primary hover:text-secondary font-medium">{t('common.readMore')}</a>
-                </Link>
-              </div>
-            </div>
-          ))}
-          
-          {/* Upcoming Events */}
-          <div className="bg-primary text-white rounded-lg overflow-hidden shadow-md">
-            <div className="p-5">
-              <h3 className="font-bold text-xl mb-4 border-b border-white pb-3">{t('newsEvents.upcomingEvents')}</h3>
-              
-              <div className="space-y-4">
-                {upcomingEvents.slice(0, 4).map((event) => (
-                  <div key={event.id}>
-                    <div className="flex items-center text-sm mb-1">
-                      <i className="far fa-calendar-alt mr-2"></i> {formatDate(event.date)}
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* News Column */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6">{t('news.latestNews')}</h3>
+            <div className="space-y-6">
+              {latestNews.map((item) => (
+                <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <div className="flex items-center text-aheu-neutral-medium text-sm mb-2">
+                      <span>{item.date}</span>
+                      <span className="mx-2">•</span>
+                      <span>{t(`news.categories.${item.category}`)}</span>
                     </div>
-                    <h4 className="font-medium">{t(`newsEvents.events.${event.id}.title`)}</h4>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {t(`news.items.${item.id}.title`)}
+                    </h4>
+                    <p className="text-aheu-neutral-dark mb-4">
+                      {t(`news.items.${item.id}.excerpt`)}
+                    </p>
+                    <Link href={`/news/${item.id}`}>
+                      <a className="text-primary hover:text-secondary font-medium flex items-center">
+                        {t('common.readMore')}
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </Link>
                   </div>
-                ))}
-              </div>
-              
-              <div className="mt-6">
-                <Link href="/events">
-                  <a className="inline-block border border-white text-white hover:bg-white hover:text-primary font-medium px-4 py-2 rounded transition text-sm">
-                    {t('newsEvents.viewAllEvents')}
-                  </a>
-                </Link>
-              </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Link href={institutionId ? `/institutions/${institutionId}/news` : "/news"}>
+                <a className="text-primary hover:text-secondary font-medium">
+                  {t('news.viewAll')}
+                </a>
+              </Link>
+            </div>
+          </div>
+          
+          {/* Events Column */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6">{t('events.upcomingEvents')}</h3>
+            <div className="space-y-6">
+              {upcomingEvents.map((item) => (
+                <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <div className="flex justify-between items-start">
+                      <div className="flex-grow">
+                        <div className="flex items-center text-aheu-neutral-medium text-sm mb-2">
+                          <span>{item.date}</span>
+                          <span className="mx-2">•</span>
+                          <span>{t(`events.categories.${item.category}`)}</span>
+                        </div>
+                        <h4 className="text-xl font-semibold mb-2">
+                          {t(`events.${item.id}.title`)}
+                        </h4>
+                        <p className="text-aheu-neutral-dark">
+                          {t(`events.${item.id}.location`)}
+                        </p>
+                      </div>
+                      <div className="bg-primary text-white rounded-md px-3 py-2 text-center min-w-[60px]">
+                        <div className="text-xs">{t(`events.${item.id}.month`)}</div>
+                        <div className="text-xl font-bold">{t(`events.${item.id}.day`)}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Link href={institutionId ? `/institutions/${institutionId}/events` : "/events"}>
+                <a className="text-primary hover:text-secondary font-medium">
+                  {t('events.viewAll')}
+                </a>
+              </Link>
             </div>
           </div>
         </div>

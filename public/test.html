@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logo Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .logo-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .logo-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    img {
+      max-width: 200px;
+      max-height: 200px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logo Test Page</h1>
+  <p>This page tests if the logo images can be loaded properly.</p>
+  
+  <div class="logo-container">
+    <div class="logo-item">
+      <h2>Pedagogy Logo</h2>
+      <img src="/pedagogy.png" alt="Pedagogy Logo">
+      <p>Path: /pedagogy.png</p>
+    </div>
+    
+    <div class="logo-item">
+      <h2>Economy Logo</h2>
+      <img src="/economy.png" alt="Economy Logo">
+      <p>Path: /economy.png</p>
+    </div>
+    
+    <div class="logo-item">
+      <h2>Design Logo</h2>
+      <img src="/designandtech.png" alt="Design Logo">
+      <p>Path: /designandtech.png</p>
+    </div>
+    
+    <div class="logo-item">
+      <h2>Pedagogy Logo (from logos folder)</h2>
+      <img src="/logos/pedagogy.png" alt="Pedagogy Logo">
+      <p>Path: /logos/pedagogy.png</p>
+    </div>
+    
+    <div class="logo-item">
+      <h2>Economy Logo (from logos folder)</h2>
+      <img src="/logos/economy.png" alt="Economy Logo">
+      <p>Path: /logos/economy.png</p>
+    </div>
+    
+    <div class="logo-item">
+      <h2>Design Logo (from logos folder)</h2>
+      <img src="/logos/designandtech.png" alt="Design Logo">
+      <p>Path: /logos/designandtech.png</p>
+    </div>
+  </div>
+  
+  <script>
+    // Check if images loaded successfully
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        img.style.border = '2px solid red';
+        const errorMsg = document.createElement('p');
+        errorMsg.style.color = 'red';
+        errorMsg.textContent = 'Failed to load!';
+        img.parentNode.appendChild(errorMsg);
+      });
+      
+      img.addEventListener('load', () => {
+        img.style.border = '2px solid green';
+        const successMsg = document.createElement('p');
+        successMsg.style.color = 'green';
+        successMsg.textContent = 'Loaded successfully!';
+        img.parentNode.appendChild(successMsg);
+      });
+    });
+  </script>
+</body>
+</html> 

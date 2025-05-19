@@ -59,7 +59,57 @@
   --aheu-neutral-dark: 210 10.3% 22.7%; /* #343A40 */
   --aheu-neutral-darker: 210 10.7% 14.5%; /* #212529 */
   
+  /* Institution Theme Variables - Default (will be overridden) */
+  --institution-primary: #003826; /* Same as main AHEU primary */
+  --institution-secondary: #006343; /* Same as main AHEU secondary */
+  
   --radius: 0.5rem;
+}
+
+/* Institution-specific theme classes */
+.institution-theme {
+  /* Override default styling with institution theme */
+  --primary: var(--institution-primary);
+  --secondary: var(--institution-secondary);
+  
+  /* Apply theme to components */
+  & .btn-primary {
+    background-color: var(--institution-primary);
+    color: white;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  & .btn-primary:hover {
+    background-color: var(--institution-secondary);
+  }
+  
+  & .text-primary {
+    color: var(--institution-primary);
+  }
+  
+  & .border-primary {
+    border-color: var(--institution-primary);
+  }
+  
+  & .bg-primary {
+    background-color: var(--institution-primary);
+  }
+  
+  & .hover\:bg-primary:hover {
+    background-color: var(--institution-primary);
+  }
+  
+  & .ring-primary {
+    --tw-ring-color: var(--institution-primary);
+  }
 }
 
 .dark {
@@ -86,49 +136,128 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'URW Gothic', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    font-weight: 600;
   }
 }
 
 @layer components {
   .dropdown-menu {
-    @apply hidden absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 transition-all py-1;
+    display: none;
+    position: absolute;
+    left: 0;
+    margin-top: 0.5rem;
+    width: 14rem;
+    background-color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    z-index: 50;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
   
   .dropdown:hover .dropdown-menu {
-    @apply block;
+    display: block;
   }
   
   .hero-overlay {
-    @apply absolute inset-0 bg-primary/60;
+    position: absolute;
+    inset: 0;
+    background-color: hsl(var(--primary) / 0.6);
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4 text-aheu-neutral-darker;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: hsl(var(--aheu-neutral-darker));
+  }
+  
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
   }
   
   .section-subtitle {
-    @apply max-w-3xl mx-auto text-lg text-aheu-neutral-dark mb-8;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: hsl(var(--aheu-neutral-dark));
+    margin-bottom: 2rem;
   }
   
   .btn-primary {
-    @apply bg-primary hover:bg-secondary text-white font-medium px-6 py-3 rounded transition-colors;
+    background-color: hsl(var(--primary));
+    color: white;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(var(--secondary));
   }
   
   .btn-outline {
-    @apply border-2 border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded font-medium transition-colors;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .btn-outline:hover {
+    background-color: white;
+    color: hsl(var(--primary));
   }
   
   .btn-white {
-    @apply bg-white text-primary hover:bg-aheu-neutral-light px-6 py-3 rounded font-medium transition-colors;
+    background-color: white;
+    color: hsl(var(--primary));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .btn-white:hover {
+    background-color: hsl(var(--aheu-neutral-light));
   }
 }

@@ -44,18 +44,36 @@ const InstitutionLayout: React.FC<InstitutionLayoutProps> = ({
         <html lang={htmlLang} />
         <title>{pageFullTitle}</title>
         <meta name="description" content={pageDescription} />
+        <style>{`
+          :root {
+            --primary-color: ${institute.primaryColor || '#3b82f6'};
+            --secondary-color: ${institute.secondaryColor || '#1e40af'};
+          }
+        `}</style>
       </Helmet>
 
       <div className="min-h-screen">
         {/* Institution-specific header */}
-        <header className="bg-primary text-white">
+        <header className="bg-primary text-white" style={{ backgroundColor: institute.primaryColor }}>
           <div className="container mx-auto px-4 md:px-6 py-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
                 <a href="/" className="text-white hover:text-white/80">← AHEU</a>
-                <a href={`/institutions/${id}`} className="text-2xl md:text-3xl font-bold text-white hover:text-white/80">
-                  {t(`institutes.${id}.shortName`)}
-                </a>
+                <div className="flex items-center gap-3">
+                  <img 
+                    src={institute.logoImage} 
+                    alt={`${t(`institutes.${id}.shortName`)} Logo`} 
+                    className="h-10 w-10 object-contain bg-white rounded-full p-1"
+                    onError={(e) => {
+                      // Fallback if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                  <a href={`/institutions/${id}`} className="text-2xl md:text-3xl font-bold text-white hover:text-white/80">
+                    {t(`institutes.${id}.shortName`)}
+                  </a>
+                </div>
               </div>
               
               {/* Institution-specific language switcher and navigation */}

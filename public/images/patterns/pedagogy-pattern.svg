@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pedagogy Pattern</title>
+    <g id="Pedagogy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.25">
+        <!-- Books -->
+        <g transform="translate(50, 50)" fill="#2e7d32" fill-rule="nonzero">
+            <path d="M80,0 L20,0 C8.954,0 0,8.954 0,20 L0,100 L100,100 L100,20 C100,8.954 91.046,0 80,0 Z M90,90 L10,90 L10,20 C10,14.477 14.477,10 20,10 L80,10 C85.523,10 90,14.477 90,20 L90,90 Z"/>
+            <rect x="20" y="30" width="60" height="10" rx="5"/>
+            <rect x="20" y="50" width="60" height="10" rx="5"/>
+            <rect x="20" y="70" width="60" height="10" rx="5"/>
+        </g>
+        <!-- Graduation Cap -->
+        <g transform="translate(250, 100)" fill="#2e7d32" fill-rule="nonzero">
+            <path d="M100,40 L50,20 L0,40 L50,60 L100,40 Z"/>
+            <path d="M30,50 L30,80 C30,80 40,90 50,90 C60,90 70,80 70,80 L70,50 L50,60 L30,50 Z"/>
+            <rect x="48" y="60" width="4" height="30"/>
+            <circle cx="50" cy="95" r="5"/>
+        </g>
+        <!-- Scale of Justice -->
+        <g transform="translate(450, 200)" fill="#2e7d32" fill-rule="nonzero">
+            <path d="M50,0 L50,100 M30,90 L70,90 M0,30 C0,20 10,10 20,10 C30,10 40,20 40,30 C40,40 30,50 20,50 C10,50 0,40 0,30 Z M60,30 C60,20 70,10 80,10 C90,10 100,20 100,30 C100,40 90,50 80,50 C70,50 60,40 60,30 Z"/>
+            <rect x="15" y="50" width="10" height="40"/>
+            <rect x="75" y="50" width="10" height="40"/>
+        </g>
+        <!-- Document -->
+        <g transform="translate(100, 350)" fill="#2e7d32" fill-rule="nonzero">
+            <path d="M80,0 L20,0 C8.954,0 0,8.954 0,20 L0,100 L100,100 L100,20 C100,8.954 91.046,0 80,0 Z M90,90 L10,90 L10,20 C10,14.477 14.477,10 20,10 L80,10 C85.523,10 90,14.477 90,20 L90,90 Z"/>
+            <rect x="20" y="30" width="60" height="5" rx="2.5"/>
+            <rect x="20" y="45" width="60" height="5" rx="2.5"/>
+            <rect x="20" y="60" width="40" height="5" rx="2.5"/>
+            <rect x="20" y="75" width="30" height="5" rx="2.5"/>
+        </g>
+        <!-- Teaching -->
+        <g transform="translate(600, 400)" fill="#2e7d32" fill-rule="nonzero">
+            <circle cx="50" cy="30" r="20"/>
+            <path d="M30,60 C30,60 20,100 50,100 C80,100 70,60 70,60 C70,60 60,70 50,70 C40,70 30,60 30,60 Z"/>
+            <rect x="15" y="50" width="70" height="10" rx="5"/>
+        </g>
+        <!-- Briefcase -->
+        <g transform="translate(300, 550)" fill="#2e7d32" fill-rule="nonzero">
+            <path d="M80,20 L60,20 L60,10 C60,4.477 55.523,0 50,0 L30,0 C24.477,0 20,4.477 20,10 L20,20 L0,20 L0,100 L100,100 L100,20 L80,20 Z M30,10 L50,10 L50,20 L30,20 L30,10 Z M90,90 L10,90 L10,30 L90,30 L90,90 Z"/>
+            <rect x="40" y="50" width="20" height="10" rx="5"/>
+        </g>
+    </g>
+</svg> 

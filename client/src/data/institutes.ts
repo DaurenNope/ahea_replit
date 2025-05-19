@@ -10,6 +10,14 @@ export interface Institute {
   logoImage?: string; // Institution-specific logo
 }
 
+// Get the current hostname and port
+const getBaseUrl = () => {
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return 'http://localhost:5000';
+};
+
 export const institutes: Institute[] = [
   {
     id: 'pedagogy',
@@ -18,9 +26,9 @@ export const institutes: Institute[] = [
     studentCount: 1200,
     facultyCount: 110,
     established: 1997,
-    primaryColor: '#3b82f6', // Blue
-    secondaryColor: '#1e40af',
-    logoImage: '/logos/pedagogy-logo.png'
+    primaryColor: '#2e7d32', // Green to match the logo
+    secondaryColor: '#1b5e20',
+    logoImage: `${getBaseUrl()}/pedagogy.png`
   },
   {
     id: 'economics',
@@ -29,9 +37,9 @@ export const institutes: Institute[] = [
     studentCount: 950,
     facultyCount: 95,
     established: 1998,
-    primaryColor: '#10b981', // Green
-    secondaryColor: '#065f46',
-    logoImage: '/logos/economics-logo.png'
+    primaryColor: '#1565c0', // Blue to match the logo
+    secondaryColor: '#0d47a1',
+    logoImage: `${getBaseUrl()}/economy.png`
   },
   {
     id: 'symbat',
@@ -40,8 +48,8 @@ export const institutes: Institute[] = [
     studentCount: 850,
     facultyCount: 80,
     established: 2003,
-    primaryColor: '#ec4899', // Pink
-    secondaryColor: '#be185d',
-    logoImage: '/logos/symbat-logo.png'
+    primaryColor: '#f0a500', // Gold/amber to match the logo
+    secondaryColor: '#e09600',
+    logoImage: `${getBaseUrl()}/designandtech.png`
   }
 ];

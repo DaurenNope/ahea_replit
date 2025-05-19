@@ -38,14 +38,15 @@ function Router() {
         <Route path="/" component={Landing} />
         <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/admissions" component={Admissions} />
         <Route path="/institutes" component={Institutes} />
         <Route path="/programs" component={Programs} />
+        <Route path="/admissions" component={Admissions} />
         <Route path="/contact" component={Contact} />
         
         {/* Institution-specific routes */}
+        <Route path="/institutes/:id" component={InstitutionHome} />
         <Route path="/institutions/:id" component={InstitutionHome} />
-        <Route path="/institutions/:id/about" component={InstitutionAbout} />
+        <Route path="/institutions/:id/:page" component={InstitutionHome} />
         
         {/* 404 route */}
         <Route component={NotFound} />

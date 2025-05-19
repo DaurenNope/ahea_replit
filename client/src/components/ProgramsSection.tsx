@@ -1,81 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { programs } from '@/data/programs';
 
-type ProgramLevel = 'all' | 'bachelor' | 'master' | 'phd';
+interface ProgramsSectionProps {
+  institutionId?: string;
+}
 
-const ProgramsSection: React.FC = () => {
+const ProgramsSection: React.FC<ProgramsSectionProps> = ({ institutionId }) => {
   const { t } = useTranslation();
-  const [activeLevel, setActiveLevel] = useState<ProgramLevel>('all');
   
-  const filteredPrograms = activeLevel === 'all' 
-    ? programs.slice(0, 6) 
-    : programs.filter(program => program.level === activeLevel).slice(0, 6);
+  // Filter programs by institution if institutionId is provided
+  const filteredPrograms = institutionId 
+    ? programs.filter(program => program.institute === institutionId)
+    : programs;
+  
+  // Limit to 6 programs for display
+  const displayPrograms = filteredPrograms.slice(0, 6);
   
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title">{t('programs.sectionTitle')}</h2>
-          <p className="section-subtitle">{t('programs.sectionSubtitle')}</p>
-        </div>
-        
-        {/* Program Filter Tabs */}
-        <div className="flex flex-wrap justify-center space-x-2 mb-8">
-          <button 
-            className={`px-5 py-2 rounded-full ${activeLevel === 'all' 
-              ? 'bg-primary text-white' 
-              : 'text-aheu-neutral-darker hover:bg-aheu-neutral-light'}`}
-            onClick={() => setActiveLevel('all')}
-          >
-            {t('programs.all')}
-          </button>
-          <button 
-            className={`px-5 py-2 rounded-full ${activeLevel === 'bachelor' 
-              ? 'bg-primary text-white' 
-              : 'text-aheu-neutral-darker hover:bg-aheu-neutral-light'}`}
-            onClick={() => setActiveLevel('bachelor')}
-          >
-            {t('programs.bachelor')}
-          </button>
-          <button 
-            className={`px-5 py-2 rounded-full ${activeLevel === 'master' 
-              ? 'bg-primary text-white' 
-              : 'text-aheu-neutral-darker hover:bg-aheu-neutral-light'}`}
-            onClick={() => setActiveLevel('master')}
-          >
-            {t('programs.master')}
-          </button>
-          <button 
-            className={`px-5 py-2 rounded-full ${activeLevel === 'phd' 
-              ? 'bg-primary text-white' 
-              : 'text-aheu-neutral-darker hover:bg-aheu-neutral-light'}`}
-            onClick={() => setActiveLevel('phd')}
-          >
-            {t('programs.phd')}
-          </button>
+          <h2 className="section-title">
+            {institutionId 
+              ? t(`institutes.${institutionId}.programsTitle`, t('programs.sectionTitle')) 
+              : t('programs.sectionTitle')}
+          </h2>
+          <p className="section-subtitle">
+            {institutionId 
+              ? t(`institutes.${institutionId}.programsSubtitle`, t('programs.sectionSubtitle')) 
+              : t('programs.sectionSubtitle')}
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPrograms.map((program) => (
-            <div key={program.id} className="border border-aheu-neutral-medium rounded-lg overflow-hidden hover:shadow-md transition">
+          {displayPrograms.map((program) => (
+            <div key={program.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-aheu-neutral-light hover:shadow-xl transition">
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-semibold text-aheu-neutral-darker">
-                    {t(`programs.items.${program.id}.title`)}
-                  </h3>
-                  <span className="bg-secondary text-white text-xs font-medium px-2 py-1 rounded">
-                    {t(`programs.${program.level}`)}
-                  </span>
-                </div>
-                <p className="text-sm text-aheu-neutral-dark mb-4">
+                <h3 className="text-xl font-bold mb-2 text-primary">
+                  {t(`programs.items.${program.id}.title`)}
+                </h3>
+                <p className="text-aheu-neutral-dark mb-4">
                   {t(`programs.items.${program.id}.description`)}
                 </p>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-aheu-neutral-dark">{t(`institutes.${program.institute}.name`)}</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-aheu-neutral-medium px-3 py-1 bg-aheu-neutral-light rounded-full">
+                    {t(`programs.${program.level}`)}
+                  </span>
                   <Link href={`/programs/${program.id}`}>
-                    <a className="text-primary">{t('common.details')}</a>
+                    <a className="text-primary hover:text-secondary font-medium flex items-center">
+                      {t('common.details')}
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -83,9 +62,11 @@ const ProgramsSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-10 text-center">
-          <Link href="/programs">
-            <a className="btn-primary">{t('programs.browseAll', { count: programs.length })}</a>
+        <div className="text-center mt-10">
+          <Link href={institutionId ? `/institutions/${institutionId}/programs` : "/programs"}>
+            <a className="btn-primary">
+              {t('programs.browseAll', {count: filteredPrograms.length})}
+            </a>
           </Link>
         </div>
       </div>
