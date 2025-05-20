@@ -83,9 +83,9 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="mt-6">
-              <Link href="/contact">
-                <a className="btn-primary">{t('contact.contactForm')}</a>
+            <div className="mt-6 flex justify-center md:justify-start">
+              <Link href="/contact" className="btn-primary">
+                {t('contact.contactForm')}
               </Link>
             </div>
           </div>

@@ -18,8 +18,6 @@ const Home: React.FC = () => {
       <Hero 
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
-        primaryButtonText={t('home.hero.primaryButton')}
-        secondaryButtonText={t('home.hero.secondaryButton')}
         announcement={t('home.hero.announcement')}
       />
       

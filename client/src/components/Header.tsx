@@ -31,10 +31,11 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="bg-primary text-white font-bold text-2xl px-3 py-1">AHEU</div>
-          <span className="ml-2 font-semibold text-lg text-aheu-neutral-darker hidden md:inline-block">
-            {t('common.universityName')}
-          </span>
+          <img 
+            src="/logos/header/aheu-en.png" 
+            alt={t('common.universityName')} 
+            className="h-12 w-auto"
+          />
         </Link>
         
         {/* Desktop Navigation */}
