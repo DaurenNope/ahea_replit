@@ -4,23 +4,40 @@ import Footer from '@/components/Footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 
+// Simplified MainLayout that's more performance-focused
 interface MainLayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
-  preloadImages?: string[];
+  minimal?: boolean;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ 
   children, 
   title = 'AHEU - Almaty Humanitarian Economic University',
   description = 'Leading educational institution in Kazakhstan offering diverse academic programs through three specialized institutes.',
-  preloadImages = []
+  minimal = false
 }) => {
-  const { t, i18n } = useTranslation();
-  
-  // Determine the HTML lang attribute based on current language
+  const { i18n } = useTranslation();
   const htmlLang = i18n.language || 'en';
+  
+  // For extremely slow devices, we can render an even more minimal version
+  if (minimal) {
+    return (
+      <>
+        <Helmet>
+          <html lang={htmlLang} />
+          <title>{title}</title>
+        </Helmet>
+        <header className="bg-white shadow-sm">
+          <div className="container mx-auto px-4 py-4">
+            <div className="text-2xl font-bold text-primary">AHEU</div>
+          </div>
+        </header>
+        <main>{children}</main>
+      </>
+    );
+  }
   
   return (
     <>
@@ -28,20 +45,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <html lang={htmlLang} />
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://aheu.edu.kz" />
-        
-        {/* Performance optimization hints */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        
-        {/* Preload critical images */}
-        {preloadImages.map((img, index) => (
-          <link key={index} rel="preload" as="image" href={img} />
-        ))}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
       <div className="flex flex-col min-h-screen">
         <Header />
