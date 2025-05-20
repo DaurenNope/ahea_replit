@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { institutes } from '@/data/institutes';
@@ -15,6 +15,58 @@ interface HeroProps {
   showInstituteCards?: boolean;
 }
 
+const InstituteCard = React.memo(({ institute, t }: { institute: any, t: any }) => (
+  <div 
+    key={institute.id} 
+    className="bg-white rounded-lg shadow-lg overflow-hidden border border-aheu-neutral-medium will-change-transform"
+    style={{ 
+      transition: 'transform 0.2s ease-out, box-shadow 0.2s ease-out',
+    }}
+    onMouseEnter={(e) => {
+      const target = e.currentTarget;
+      target.style.transform = 'translateY(-4px)';
+      target.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+    }}
+    onMouseLeave={(e) => {
+      const target = e.currentTarget;
+      target.style.transform = 'translateY(0)';
+      target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+    }}
+  >
+    <div 
+      className="h-40 bg-cover bg-center" 
+      style={{ 
+        backgroundImage: `url('https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80')`,
+        backgroundColor: '#f3f4f6' // Placeholder color while image loads
+      }}
+    >
+      <div className="h-full w-full bg-primary/70 flex items-center justify-center">
+        <h3 className="text-xl md:text-2xl font-bold text-white px-4 text-center">
+          {t(`institutes.${institute.id}.shortName`)}
+        </h3>
+      </div>
+    </div>
+    <div className="p-5">
+      <p className="text-aheu-neutral-dark mb-4 line-clamp-3 h-[4.5rem]">
+        {t(`institutes.${institute.id}.shortDescription`)}
+      </p>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          <span className="text-sm text-aheu-neutral-dark">
+            {institute.programCount} {t('institutes.programs')}
+          </span>
+        </div>
+        <Link href={`/institutes/${institute.id}`} className="text-primary hover:text-secondary font-bold flex items-center">
+          {t('common.learnMore')} 
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+    </div>
+  </div>
+));
+
 const Hero: React.FC<HeroProps> = ({
   backgroundImage = 'photo-1541339907198-e08756dedf3f',
   title,
@@ -27,6 +79,12 @@ const Hero: React.FC<HeroProps> = ({
   showInstituteCards = true
 }) => {
   const { t } = useTranslation();
+
+  // Memoize the hero background URL to prevent unnecessary recalculations
+  const heroBackgroundUrl = useMemo(() => 
+    `url('https://images.unsplash.com/${backgroundImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=900&q=80')`,
+    [backgroundImage]
+  );
   
   return (
     <div className="relative">
@@ -34,7 +92,10 @@ const Hero: React.FC<HeroProps> = ({
       <section className="relative">
         <div 
           className="h-[60vh] md:h-[65vh] lg:h-[75vh] bg-cover bg-center" 
-          style={{ backgroundImage: `url('https://images.unsplash.com/${backgroundImage}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')` }}
+          style={{ 
+            backgroundImage: heroBackgroundUrl,
+            backgroundColor: '#1a1a1a' // Placeholder dark color while image loads
+          }}
           aria-hidden="true"
         >
           <div className="hero-overlay">
@@ -76,39 +137,11 @@ const Hero: React.FC<HeroProps> = ({
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-3 gap-6">
               {institutes.map((institute) => (
-                <div 
-                  key={institute.id} 
-                  className="bg-white rounded-lg shadow-xl overflow-hidden border border-aheu-neutral-medium hover:shadow-2xl transition-all transform hover:-translate-y-1"
-                >
-                  <div 
-                    className="h-40 bg-cover bg-center" 
-                    style={{ backgroundImage: `url('https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300')` }}
-                  >
-                    <div className="h-full w-full bg-primary/70 flex items-center justify-center">
-                      <h3 className="text-xl md:text-2xl font-bold text-white px-4 text-center">
-                        {t(`institutes.${institute.id}.shortName`)}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-aheu-neutral-dark mb-4 line-clamp-3 h-[4.5rem]">
-                      {t(`institutes.${institute.id}.shortDescription`)}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <span className="text-sm text-aheu-neutral-dark">
-                          {institute.programCount} {t('institutes.programs')}
-                        </span>
-                      </div>
-                      <Link href={`/institutes/${institute.id}`} className="text-primary hover:text-secondary font-bold flex items-center">
-                        {t('common.learnMore')} 
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <InstituteCard 
+                  key={institute.id}
+                  institute={institute}
+                  t={t}
+                />
               ))}
             </div>
           </div>

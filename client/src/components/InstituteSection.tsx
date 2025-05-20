@@ -1,9 +1,46 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { institutes } from '@/data/institutes';
 
-const InstituteSection: React.FC = () => {
+// Memoized institute card component for better performance
+const InstituteCard = React.memo(({ institute, t }: { institute: any, t: any }) => {
+  // Optimize image URL - only calculate once per institute
+  const imageUrl = useMemo(() => 
+    `https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=75`,
+    [institute.image]
+  );
+
+  return (
+    <div 
+      key={institute.id} 
+      className="bg-white rounded-lg shadow-lg overflow-hidden border border-aheu-neutral-medium transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+    >
+      <div 
+        className="h-52 w-full bg-cover bg-center" 
+        style={{ 
+          backgroundImage: `url(${imageUrl})`,
+          backgroundColor: '#f3f4f6' // Fallback color while loading
+        }} 
+      />
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2 text-primary">{t(`institutes.${institute.id}.name`)}</h3>
+        <p className="text-aheu-neutral-dark mb-4 line-clamp-3">{t(`institutes.${institute.id}.shortDescription`)}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-sm text-aheu-neutral-dark">{institute.programCount} {t('institutes.programs')}</span>
+          <Link href={`/institutes/${institute.id}`}>
+            <a className="text-primary hover:text-secondary font-medium flex items-center">
+              {t('common.learnMore')} <i className="fas fa-arrow-right ml-2"></i>
+            </a>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+// Memoize the entire InstituteSection component to prevent unnecessary re-renders
+const InstituteSection: React.FC = React.memo(() => {
   const { t } = useTranslation();
   
   return (
@@ -16,25 +53,11 @@ const InstituteSection: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {institutes.map((institute) => (
-            <div key={institute.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-aheu-neutral-medium hover:shadow-xl transition">
-              <img 
-                className="h-52 w-full object-cover" 
-                src={`https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400`} 
-                alt={t(`institutes.${institute.id}.imageAlt`)} 
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-primary">{t(`institutes.${institute.id}.name`)}</h3>
-                <p className="text-aheu-neutral-dark mb-4">{t(`institutes.${institute.id}.shortDescription`)}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-aheu-neutral-dark">{institute.programCount} {t('institutes.programs')}</span>
-                  <Link href={`/institutes/${institute.id}`}>
-                    <a className="text-primary hover:text-secondary font-medium flex items-center">
-                      {t('common.learnMore')} <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <InstituteCard
+              key={institute.id}
+              institute={institute}
+              t={t}
+            />
           ))}
         </div>
         
@@ -46,6 +69,6 @@ const InstituteSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default InstituteSection;
