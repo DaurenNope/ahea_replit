@@ -7,7 +7,6 @@ import { institutes } from '@/data/institutes';
 import { Link, useLocation } from 'wouter';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 type ProgramLevel = 'all' | 'bachelor' | 'master' | 'phd';
 type InstituteId = 'all' | string;
@@ -41,7 +40,6 @@ const Programs: React.FC = () => {
       description={t('programs.pageDescription')}
     >
       <Hero 
-        backgroundImage="photo-1523580846011-d3a5bc25702b"
         title={t('programs.hero.title')}
         subtitle={t('programs.hero.subtitle')}
       />
@@ -74,20 +72,17 @@ const Programs: React.FC = () => {
                 <Label htmlFor="level-filter" className="mb-2 block">
                   {t('programs.filterByLevel')}
                 </Label>
-                <Select 
-                  value={activeLevel} 
-                  onValueChange={(value) => setActiveLevel(value as ProgramLevel)}
+                <select
+                  id="level-filter"
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+                  value={activeLevel}
+                  onChange={(e) => setActiveLevel(e.target.value as ProgramLevel)}
                 >
-                  <SelectTrigger id="level-filter">
-                    <SelectValue placeholder={t('programs.selectLevel')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('programs.all')}</SelectItem>
-                    <SelectItem value="bachelor">{t('programs.bachelor')}</SelectItem>
-                    <SelectItem value="master">{t('programs.master')}</SelectItem>
-                    <SelectItem value="phd">{t('programs.phd')}</SelectItem>
-                  </SelectContent>
-                </Select>
+                  <option value="all">{t('programs.all')}</option>
+                  <option value="bachelor">{t('programs.bachelor')}</option>
+                  <option value="master">{t('programs.master')}</option>
+                  <option value="phd">{t('programs.phd')}</option>
+                </select>
               </div>
               
               {/* Institute Filter */}
@@ -95,22 +90,19 @@ const Programs: React.FC = () => {
                 <Label htmlFor="institute-filter" className="mb-2 block">
                   {t('programs.filterByInstitute')}
                 </Label>
-                <Select 
-                  value={activeInstitute} 
-                  onValueChange={(value) => setActiveInstitute(value)}
+                <select
+                  id="institute-filter"
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+                  value={activeInstitute}
+                  onChange={(e) => setActiveInstitute(e.target.value)}
                 >
-                  <SelectTrigger id="institute-filter">
-                    <SelectValue placeholder={t('programs.selectInstitute')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('programs.allInstitutes')}</SelectItem>
-                    {institutes.map((institute) => (
-                      <SelectItem key={institute.id} value={institute.id}>
-                        {t(`institutes.${institute.id}.shortName`)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                  <option value="all">{t('programs.allInstitutes')}</option>
+                  {institutes.map((institute) => (
+                    <option key={institute.id} value={institute.id}>
+                      {t(`institutes.${institute.id}.shortName`)}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
             

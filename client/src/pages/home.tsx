@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import FeaturesSection from '@/components/FeaturesSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import InternationalSection from '@/components/InternationalSection';
@@ -15,10 +15,9 @@ const Home: React.FC = () => {
   
   return (
     <MainLayout>
-      <Hero 
+      <ModernHero 
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
-        announcement={t('home.hero.announcement')}
       />
       
       {/* InstituteSection removed as it's now integrated in the Hero */}

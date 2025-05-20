@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageSwitcher: React.FC = () => {
@@ -10,26 +10,36 @@ const LanguageSwitcher: React.FC = () => {
   };
   
   return (
-    <div className="flex items-center space-x-2 ml-4">
+    <div className="flex items-center space-x-2">
       <button 
         onClick={() => changeLanguage('ru')}
-        className={`${currentLanguage === 'ru' ? 'font-medium' : 'opacity-70 hover:opacity-100'}`}
+        className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
+          currentLanguage === 'ru' 
+            ? 'bg-primary/10 text-primary font-medium' 
+            : 'hover:bg-gray-100'
+        }`}
         aria-label="Switch to Russian language"
       >
         RU
       </button>
-      <span>|</span>
       <button 
         onClick={() => changeLanguage('kz')}
-        className={`${currentLanguage === 'kz' ? 'font-medium' : 'opacity-70 hover:opacity-100'}`}
+        className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
+          currentLanguage === 'kz' 
+            ? 'bg-primary/10 text-primary font-medium' 
+            : 'hover:bg-gray-100'
+        }`}
         aria-label="Switch to Kazakh language"
       >
         KZ
       </button>
-      <span>|</span>
       <button 
         onClick={() => changeLanguage('en')}
-        className={`${currentLanguage === 'en' ? 'font-medium' : 'opacity-70 hover:opacity-100'}`}
+        className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
+          currentLanguage === 'en' 
+            ? 'bg-primary/10 text-primary font-medium' 
+            : 'hover:bg-gray-100'
+        }`}
         aria-label="Switch to English language"
       >
         EN
