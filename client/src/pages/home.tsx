@@ -2,24 +2,24 @@ import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
 import Hero from '@/components/Hero';
+import FeaturesSection from '@/components/FeaturesSection';
+import { institutes } from '@/data/institutes';
 
-// Lazy load components that aren't needed for initial render
-const FeaturesSection = lazy(() => import('@/components/FeaturesSection'));
-const ProgramsSection = lazy(() => import('@/components/ProgramsSection'));
-const InternationalSection = lazy(() => import('@/components/InternationalSection'));
-const CampusLifeSection = lazy(() => import('@/components/CampusLifeSection'));
-const NewsEventsSection = lazy(() => import('@/components/NewsEventsSection'));
-const CallToAction = lazy(() => import('@/components/CallToAction'));
-const ContactSection = lazy(() => import('@/components/ContactSection'));
+// Group non-critical components into a single chunk
+const SecondaryContent = lazy(() => import('@/components/SecondaryContent'));
 
-// Simple loading placeholder for lazy-loaded sections
+// Simple loading placeholder with fixed height to prevent layout shifts
 const SectionLoading = () => (
-  <div className="py-16 w-full">
-    <div className="container mx-auto px-4">
-      <div className="max-w-md mx-auto">
-        <div className="h-8 bg-gray-200 rounded animate-pulse mb-6"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse mb-4 w-3/4"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+  <div className="py-8 w-full" style={{ minHeight: '800px' }}>
+    <div className="container mx-auto px-4 animate-pulse">
+      <div className="max-w-5xl mx-auto">
+        <div className="h-8 bg-gray-200 rounded mb-6 w-1/3"></div>
+        <div className="h-4 bg-gray-200 rounded mb-4 w-1/2"></div>
+        <div className="grid md:grid-cols-3 gap-8 mt-8">
+          <div className="h-64 bg-gray-200 rounded"></div>
+          <div className="h-64 bg-gray-200 rounded"></div>
+          <div className="h-64 bg-gray-200 rounded"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,10 +28,18 @@ const SectionLoading = () => (
 const Home: React.FC = () => {
   const { t } = useTranslation();
   
+  // Use local images for better performance
+  const preloadImages = [
+    '/pedagogy.png',
+    '/economy.png',
+    '/designandtech.png'
+  ];
+  
   return (
-    <MainLayout>
-      {/* Hero section is kept in the main bundle since it's critical for initial render */}
+    <MainLayout preloadImages={preloadImages}>
+      {/* Hero section with gradient background instead of image for better performance */}
       <Hero 
+        backgroundImage="gradient"
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
         primaryButtonText={t('home.hero.primaryButton')}
@@ -39,38 +47,12 @@ const Home: React.FC = () => {
         announcement={t('home.hero.announcement')}
       />
       
-      {/* Wrap other sections with Suspense to lazy load them */}
-      <Suspense fallback={<SectionLoading />}>
-        <FeaturesSection />
-      </Suspense>
+      {/* Include FeaturesSection in the initial bundle as it's small and visible above the fold */}
+      <FeaturesSection />
       
+      {/* Wrap all remaining sections in a single Suspense boundary */}
       <Suspense fallback={<SectionLoading />}>
-        <ProgramsSection />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoading />}>
-        <InternationalSection />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoading />}>
-        <CampusLifeSection />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoading />}>
-        <NewsEventsSection />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoading />}>
-        <CallToAction 
-          title={t('home.callToAction.title')}
-          description={t('home.callToAction.description')}
-          primaryButtonText={t('home.callToAction.primaryButton')}
-          secondaryButtonText={t('home.callToAction.secondaryButton')}
-        />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoading />}>
-        <ContactSection />
+        <SecondaryContent />
       </Suspense>
     </MainLayout>
   );

@@ -8,12 +8,14 @@ interface MainLayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  preloadImages?: string[];
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ 
   children, 
   title = 'AHEU - Almaty Humanitarian Economic University',
-  description = 'Leading educational institution in Kazakhstan offering diverse academic programs through three specialized institutes.'
+  description = 'Leading educational institution in Kazakhstan offering diverse academic programs through three specialized institutes.',
+  preloadImages = []
 }) => {
   const { t, i18n } = useTranslation();
   
@@ -30,6 +32,16 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://aheu.edu.kz" />
+        
+        {/* Performance optimization hints */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        
+        {/* Preload critical images */}
+        {preloadImages.map((img, index) => (
+          <link key={index} rel="preload" as="image" href={img} />
+        ))}
       </Helmet>
       <div className="flex flex-col min-h-screen">
         <Header />
