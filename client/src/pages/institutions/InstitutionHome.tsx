@@ -85,6 +85,7 @@ const InstitutionHome: React.FC = () => {
           secondaryButtonText={t('common.apply')}
           secondaryButtonLink="/admissions"
           announcement={t('home.hero.announcement')}
+          showInstituteCards={false}
         />
         
         {/* Use the same components as the main site but with institution-specific data */}

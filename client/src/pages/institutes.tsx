@@ -20,6 +20,7 @@ const Institutes: React.FC = () => {
         backgroundImage="photo-1523050854058-8df90110c9f1"
         title={t('institutes.hero.title')}
         subtitle={t('institutes.hero.subtitle')}
+        showInstituteCards={false}
       />
       
       <section className="py-16 bg-white">

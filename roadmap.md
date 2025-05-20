@@ -12,7 +12,7 @@ This is a website for Almaty Humanitarian Economic University (AHEU) built with 
 ### Unified Design Approach
 We are implementing a cohesive structure for the website:
 - **Main Landing Page**: Simple, elegant landing page that serves as an entry point
-- **Institution Selection**: Three clear options to choose different institutions
+- **Institution Selection**: Three clear options to choose different institutions (only shown on the main landing page)
 - **Institution Websites**: Each institution will have its own website based on the same design template
   - Consistent UI/UX across all institution websites
   - Color scheme and branding elements customized for each institution
@@ -62,6 +62,7 @@ We are implementing a cohesive structure for the website:
    - Ensure consistent component styling across institution themes
    - Finalize shared component library with theme-aware styling
    - Verify color palettes for each institution that align with their identities
+   - Remove institution selection cards section from institution-specific pages (keep only on main landing page)
 
 3. **Database Integration**
    - Implement proper database connections
@@ -126,6 +127,7 @@ We are implementing a cohesive structure for the website:
 4. ✅ Convert key pages to use the theme system across all institutions
 5. Implement detailed navigation structure for each institution (starting with Pedagogy)
 6. Create templates for institution-specific content pages based on the menu structure
+7. Remove the institution selection cards section from institution-specific pages
 
 ## Theme Management Protocol
 To maintain consistency across institutions:
@@ -147,5 +149,10 @@ To maintain consistency across institutions:
 - Create a context-based theme provider to detect current institution
 - Implement smooth transitions when switching between institutions
 - Ensure all components respond appropriately to theme changes
+
+### Component Display Rules
+- The Three Institutes Feature Section should only be displayed on the main landing page
+- Institution-specific pages should not show the institution selection cards
+- Each institution page should focus solely on its own content and branding
 
 By following this theme-based approach, we will create a cohesive multi-institution experience with consistent user interfaces while still maintaining distinct brand identities through color and subtle styling variations. 

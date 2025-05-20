@@ -12,6 +12,7 @@ interface HeroProps {
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
   announcement?: string;
+  showInstituteCards?: boolean;
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -22,7 +23,8 @@ const Hero: React.FC<HeroProps> = ({
   primaryButtonLink = '/admissions',
   secondaryButtonText,
   secondaryButtonLink = '/programs',
-  announcement
+  announcement,
+  showInstituteCards = true
 }) => {
   const { t } = useTranslation();
   
@@ -68,48 +70,50 @@ const Hero: React.FC<HeroProps> = ({
         )}
       </section>
 
-      {/* Three Institutes Feature Section */}
-      <section className="bg-white py-0 -mt-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            {institutes.map((institute) => (
-              <div 
-                key={institute.id} 
-                className="bg-white rounded-lg shadow-xl overflow-hidden border border-aheu-neutral-medium hover:shadow-2xl transition-all transform hover:-translate-y-1"
-              >
+      {/* Three Institutes Feature Section - Only show on main landing page */}
+      {showInstituteCards && (
+        <section className="bg-white py-0 -mt-24 relative z-10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid md:grid-cols-3 gap-6">
+              {institutes.map((institute) => (
                 <div 
-                  className="h-40 bg-cover bg-center" 
-                  style={{ backgroundImage: `url('https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300')` }}
+                  key={institute.id} 
+                  className="bg-white rounded-lg shadow-xl overflow-hidden border border-aheu-neutral-medium hover:shadow-2xl transition-all transform hover:-translate-y-1"
                 >
-                  <div className="h-full w-full bg-primary/70 flex items-center justify-center">
-                    <h3 className="text-xl md:text-2xl font-bold text-white px-4 text-center">
-                      {t(`institutes.${institute.id}.shortName`)}
-                    </h3>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <p className="text-aheu-neutral-dark mb-4 line-clamp-3 h-[4.5rem]">
-                    {t(`institutes.${institute.id}.shortDescription`)}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <span className="text-sm text-aheu-neutral-dark">
-                        {institute.programCount} {t('institutes.programs')}
-                      </span>
+                  <div 
+                    className="h-40 bg-cover bg-center" 
+                    style={{ backgroundImage: `url('https://images.unsplash.com/${institute.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300')` }}
+                  >
+                    <div className="h-full w-full bg-primary/70 flex items-center justify-center">
+                      <h3 className="text-xl md:text-2xl font-bold text-white px-4 text-center">
+                        {t(`institutes.${institute.id}.shortName`)}
+                      </h3>
                     </div>
-                    <Link href={`/institutes/${institute.id}`} className="text-primary hover:text-secondary font-bold flex items-center">
-                      {t('common.learnMore')} 
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
+                  </div>
+                  <div className="p-5">
+                    <p className="text-aheu-neutral-dark mb-4 line-clamp-3 h-[4.5rem]">
+                      {t(`institutes.${institute.id}.shortDescription`)}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <span className="text-sm text-aheu-neutral-dark">
+                          {institute.programCount} {t('institutes.programs')}
+                        </span>
+                      </div>
+                      <Link href={`/institutes/${institute.id}`} className="text-primary hover:text-secondary font-bold flex items-center">
+                        {t('common.learnMore')} 
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 };

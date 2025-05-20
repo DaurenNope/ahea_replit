@@ -15,9 +15,10 @@ const About = () => {
       description={t('about.pageDescription')}
     >
       <Hero 
-        backgroundImage="photo-1523050854058-8df90110c9f1"
+        backgroundImage="photo-1517486808906-6ca8b3f8e1c1"
         title={t('about.hero.title')}
         subtitle={t('about.hero.subtitle')}
+        showInstituteCards={false}
       />
       
       <section className="py-16 bg-white">

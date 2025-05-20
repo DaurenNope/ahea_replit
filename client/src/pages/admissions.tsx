@@ -16,10 +16,10 @@ const Admissions = () => {
       description={t('admissions.pageDescription')}
     >
       <Hero 
-        backgroundImage="photo-1523580846011-d3a5bc25702b"
+        backgroundImage="photo-1523050854058-8df90110c9f1"
         title={t('admissions.hero.title')}
         subtitle={t('admissions.hero.subtitle')}
-        primaryButtonText={t('admissions.hero.primaryButton')}
+        showInstituteCards={false}
       />
       
       <section className="py-16 bg-white">

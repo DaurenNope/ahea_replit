@@ -69,9 +69,10 @@ const Contact: React.FC = () => {
       description={t('contact.pageDescription')}
     >
       <Hero 
-        backgroundImage="photo-1524178232363-1fb2b075b655"
+        backgroundImage="photo-1534536281715-e28d76689b4d"
         title={t('contact.hero.title')}
         subtitle={t('contact.hero.subtitle')}
+        showInstituteCards={false}
       />
       
       <section className="py-16 bg-white">

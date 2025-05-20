@@ -44,6 +44,7 @@ const Programs: React.FC = () => {
         backgroundImage="photo-1523580846011-d3a5bc25702b"
         title={t('programs.hero.title')}
         subtitle={t('programs.hero.subtitle')}
+        showInstituteCards={false}
       />
       
       <section className="py-16 bg-white">
