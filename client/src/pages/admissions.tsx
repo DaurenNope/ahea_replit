@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -15,11 +15,9 @@ const Admissions = () => {
       title={`${t('admissions.pageTitle')} | AHEU`}
       description={t('admissions.pageDescription')}
     >
-      <Hero 
-        backgroundImage="photo-1523580846011-d3a5bc25702b"
+      <ModernHero 
         title={t('admissions.hero.title')}
         subtitle={t('admissions.hero.subtitle')}
-        primaryButtonText={t('admissions.hero.primaryButton')}
       />
       
       <section className="py-16 bg-white">

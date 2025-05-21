@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { institutes } from '@/data/institutes';
 import { programs } from '@/data/programs';
@@ -16,8 +16,7 @@ const Institutes: React.FC = () => {
       title={`${t('institutes.pageTitle')} | AHEU`}
       description={t('institutes.pageDescription')}
     >
-      <Hero 
-        backgroundImage="photo-1523050854058-8df90110c9f1"
+      <ModernHero 
         title={t('institutes.hero.title')}
         subtitle={t('institutes.hero.subtitle')}
       />

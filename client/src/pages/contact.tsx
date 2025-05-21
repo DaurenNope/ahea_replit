@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -68,8 +68,7 @@ const Contact: React.FC = () => {
       title={`${t('contact.pageTitle')} | AHEU`}
       description={t('contact.pageDescription')}
     >
-      <Hero 
-        backgroundImage="photo-1524178232363-1fb2b075b655"
+      <ModernHero 
         title={t('contact.hero.title')}
         subtitle={t('contact.hero.subtitle')}
       />

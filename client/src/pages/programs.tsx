@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import { programs } from '@/data/programs';
 import { institutes } from '@/data/institutes';
 import { Link, useLocation } from 'wouter';
@@ -39,7 +39,7 @@ const Programs: React.FC = () => {
       title={`${t('programs.pageTitle')} | AHEU`}
       description={t('programs.pageDescription')}
     >
-      <Hero 
+      <ModernHero 
         title={t('programs.hero.title')}
         subtitle={t('programs.hero.subtitle')}
       />

@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import MainLayout from '@/layouts/MainLayout';
-import Hero from '@/components/Hero';
+import ModernHero from '@/components/ModernHero';
 import CallToAction from '@/components/CallToAction';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,8 +14,7 @@ const About = () => {
       title={`${t('about.pageTitle')} | AHEU`}
       description={t('about.pageDescription')}
     >
-      <Hero 
-        backgroundImage="photo-1523050854058-8df90110c9f1"
+      <ModernHero 
         title={t('about.hero.title')}
         subtitle={t('about.hero.subtitle')}
       />
