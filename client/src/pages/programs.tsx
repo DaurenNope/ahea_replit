@@ -75,7 +75,7 @@ const Programs: React.FC = () => {
                 <select
                   id="level-filter"
                   className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
-                  value={activeLevel}
+                  value={activeLevel} 
                   onChange={(e) => setActiveLevel(e.target.value as ProgramLevel)}
                 >
                   <option value="all">{t('programs.all')}</option>
@@ -93,15 +93,15 @@ const Programs: React.FC = () => {
                 <select
                   id="institute-filter"
                   className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
-                  value={activeInstitute}
+                  value={activeInstitute} 
                   onChange={(e) => setActiveInstitute(e.target.value)}
                 >
                   <option value="all">{t('programs.allInstitutes')}</option>
-                  {institutes.map((institute) => (
+                    {institutes.map((institute) => (
                     <option key={institute.id} value={institute.id}>
-                      {t(`institutes.${institute.id}.shortName`)}
+                        {t(`institutes.${institute.id}.shortName`)}
                     </option>
-                  ))}
+                    ))}
                 </select>
               </div>
             </div>

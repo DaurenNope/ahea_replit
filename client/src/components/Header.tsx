@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   
-  // Get logo based on current language
+  // Get logo based on current language with correct path
   const logoPath = i18n.language === 'ru' 
     ? "/logos/header/aheu-ru.png" 
     : i18n.language === 'kz'
@@ -33,10 +33,27 @@ const Header: React.FC = () => {
           <div className="flex space-x-6 text-aheu-neutral-darker">
             {navLinks.map((navItem) => (
               <div key={navItem.id} className="dropdown relative group">
-                <button className="py-2 hover:text-secondary flex items-center gap-1">
-                  {t(`nav.${navItem.labelKey}`)} 
-                  {navItem.children && <i className="fas fa-chevron-down text-xs ml-1"></i>}
-                </button>
+                {navItem.href ? (
+                  <Link href={navItem.href}>
+                    <button className={`py-2 flex items-center gap-1 ${
+                      navItem.isSpecial 
+                        ? 'font-bold text-white bg-secondary px-4 py-2 rounded-md hover:bg-primary transition-colors' 
+                        : 'hover:text-secondary'
+                    }`}>
+                      {t(`nav.${navItem.labelKey}`)} 
+                      {navItem.children && <i className="fas fa-chevron-down text-xs ml-1"></i>}
+                    </button>
+                  </Link>
+                ) : (
+                  <button className={`py-2 flex items-center gap-1 ${
+                    navItem.isSpecial 
+                      ? 'font-bold text-white bg-secondary px-4 py-2 rounded-md hover:bg-primary transition-colors' 
+                      : 'hover:text-secondary'
+                  }`}>
+                    {t(`nav.${navItem.labelKey}`)} 
+                    {navItem.children && <i className="fas fa-chevron-down text-xs ml-1"></i>}
+                  </button>
+                )}
                 
                 {navItem.children && (
                   <div className="dropdown-menu">

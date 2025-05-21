@@ -12,6 +12,12 @@ import Programs from "@/pages/programs";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
+// Institute pages
+import PedagogyInstitute from "@/pages/institutes/pedagogy";
+import EconomicsInstitute from "@/pages/institutes/economics";
+import SymbatInstitute from "@/pages/institutes/symbat";
+import College from "@/pages/college";
+
 function ScrollToTop() {
   const [location] = useLocation();
   
@@ -31,8 +37,12 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/admissions" component={Admissions} />
         <Route path="/institutes" component={Institutes} />
+        <Route path="/institutes/pedagogy" component={PedagogyInstitute} />
+        <Route path="/institutes/economics" component={EconomicsInstitute} />
+        <Route path="/institutes/symbat" component={SymbatInstitute} />
         <Route path="/programs" component={Programs} />
         <Route path="/contact" component={Contact} />
+        <Route path="/college" component={College} />
         <Route component={NotFound} />
       </Switch>
     </>

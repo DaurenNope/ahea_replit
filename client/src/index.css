@@ -129,6 +129,6 @@
   }
   
   .btn-white {
-    @apply bg-white text-primary hover:bg-aheu-neutral-light px-6 py-3 rounded font-medium transition-colors;
+    @apply px-6 py-3 bg-white text-aheu-neutral-darker hover:bg-gray-100 rounded font-medium transition-colors;
   }
 }

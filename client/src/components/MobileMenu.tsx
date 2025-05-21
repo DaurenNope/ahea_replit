@@ -26,11 +26,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       <div className="container mx-auto px-4 py-3">
         <nav className="flex flex-col space-y-3">
           {navLinks.map((navItem) => (
-            <div key={navItem.id} className="py-2 border-b border-aheu-neutral-medium">
+            <div key={navItem.id} className={`py-2 border-b border-aheu-neutral-medium ${navItem.isSpecial ? 'bg-secondary rounded-md mb-2' : ''}`}>
               {navItem.children ? (
                 <>
                   <button 
-                    className="flex justify-between items-center w-full text-left" 
+                    className={`flex justify-between items-center w-full text-left ${navItem.isSpecial ? 'text-white font-bold px-3' : ''}`} 
                     onClick={() => toggleSubmenu(navItem.id)}
                     aria-expanded={openSubmenus[navItem.id]}
                   >
@@ -54,7 +54,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 <Link 
                   href={navItem.href || '#'} 
                   onClick={onClose}
-                  className="block"
+                  className={`block ${navItem.isSpecial ? 'text-white font-bold px-3' : ''}`}
                 >
                   {t(`nav.${navItem.labelKey}`)}
                 </Link>

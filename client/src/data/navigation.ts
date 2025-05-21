@@ -9,6 +9,7 @@ export interface NavItem {
   labelKey: string;
   href?: string;
   children?: NavChild[];
+  isSpecial?: boolean;
 }
 
 export const navLinks: NavItem[] = [
@@ -17,14 +18,14 @@ export const navLinks: NavItem[] = [
     labelKey: 'about',
     children: [
       {
-        id: 'mission',
-        labelKey: 'missionVision',
-        href: '/about'
-      },
-      {
         id: 'history',
         labelKey: 'historyHeritage',
         href: '/about?tab=history'
+      },
+      {
+        id: 'mission',
+        labelKey: 'missionVision',
+        href: '/about'
       },
       {
         id: 'leadership',
@@ -32,14 +33,19 @@ export const navLinks: NavItem[] = [
         href: '/about?tab=leadership'
       },
       {
-        id: 'accreditation',
-        labelKey: 'accreditation',
-        href: '/about?tab=accreditation'
-      },
-      {
         id: 'rankings',
         labelKey: 'rankings',
         href: '/about?tab=rankings'
+      },
+      {
+        id: 'infrastructure',
+        labelKey: 'infrastructure',
+        href: '/about?tab=infrastructure'
+      },
+      {
+        id: 'tour',
+        labelKey: '3dTour',
+        href: '/about/virtual-tour'
       },
       {
         id: 'contact',
@@ -53,8 +59,8 @@ export const navLinks: NavItem[] = [
     labelKey: 'admissions',
     children: [
       {
-        id: 'howToApply',
-        labelKey: 'howToApply',
+        id: 'commission',
+        labelKey: 'admissionsCommittee',
         href: '/admissions'
       },
       {
@@ -69,7 +75,7 @@ export const navLinks: NavItem[] = [
       },
       {
         id: 'international',
-        labelKey: 'international',
+        labelKey: 'internationalApplicants',
         href: '/admissions?tab=international'
       },
       {
@@ -81,6 +87,11 @@ export const navLinks: NavItem[] = [
         id: 'faq',
         labelKey: 'faq',
         href: '/admissions#faq'
+      },
+      {
+        id: 'admissions-contact',
+        labelKey: 'admissionsContact',
+        href: '/admissions#contact'
       }
     ]
   },
@@ -91,48 +102,22 @@ export const navLinks: NavItem[] = [
       {
         id: 'pedagogy',
         labelKey: 'pedagogyInstitute',
-        href: '/institutes?tab=pedagogy'
+        href: '/institutes/pedagogy'
       },
       {
         id: 'economics',
         labelKey: 'economicsInstitute',
-        href: '/institutes?tab=economics'
+        href: '/institutes/economics'
       },
       {
         id: 'symbat',
         labelKey: 'symbatInstitute',
-        href: '/institutes?tab=symbat'
+        href: '/institutes/symbat'
       },
       {
-        id: 'allPrograms',
-        labelKey: 'allPrograms',
-        href: '/programs'
-      }
-    ]
-  },
-  {
-    id: 'studentLife',
-    labelKey: 'studentLife',
-    children: [
-      {
-        id: 'campusLife',
-        labelKey: 'campusLife',
-        href: '/student-life'
-      },
-      {
-        id: 'accommodation',
-        labelKey: 'accommodation',
-        href: '/student-life/accommodation'
-      },
-      {
-        id: 'sports',
-        labelKey: 'sportsRecreation',
-        href: '/student-life/sports'
-      },
-      {
-        id: 'clubs',
-        labelKey: 'clubsSocieties',
-        href: '/student-life/clubs'
+        id: 'international-dept',
+        labelKey: 'internationalDepartment',
+        href: '/international/contact'
       }
     ]
   },
@@ -141,30 +126,36 @@ export const navLinks: NavItem[] = [
     labelKey: 'international',
     children: [
       {
-        id: 'internationalStudents',
-        labelKey: 'internationalStudents',
-        href: '/international'
-      },
-      {
         id: 'partners',
-        labelKey: 'globalPartners',
+        labelKey: 'partnerUniversities',
         href: '/international/partners'
       },
       {
-        id: 'exchange',
-        labelKey: 'exchangePrograms',
-        href: '/international/exchange'
+        id: 'international-students',
+        labelKey: 'internationalStudents',
+        href: '/international/students'
       },
       {
-        id: 'turkish',
-        labelKey: 'turkishCenter',
-        href: '/international/turkish-center'
+        id: 'international-faculty',
+        labelKey: 'internationalFaculty',
+        href: '/international/faculty'
+      },
+      {
+        id: 'international-contacts',
+        labelKey: 'internationalContacts',
+        href: '/international/contact'
       }
     ]
   },
   {
-    id: 'news',
-    labelKey: 'newsEvents',
-    href: '/news'
+    id: 'contact',
+    labelKey: 'contacts',
+    href: '/contact'
+  },
+  {
+    id: 'college',
+    labelKey: 'college',
+    href: '/college',
+    isSpecial: true
   }
 ];
