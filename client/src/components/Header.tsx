@@ -6,8 +6,15 @@ import MobileMenu from '@/components/MobileMenu';
 import { navLinks } from '@/data/navigation';
 
 const Header: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  
+  // Get logo based on current language
+  const logoPath = i18n.language === 'ru' 
+    ? "/logos/header/aheu-ru.png" 
+    : i18n.language === 'kz'
+      ? "/logos/header/aheu-kz.png"
+      : "/logos/header/aheu-en.png";
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -15,7 +22,7 @@ const Header: React.FC = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img 
-            src="/logos/header/aheu-en.png" 
+            src={logoPath}
             alt={t('common.universityName')} 
             className="h-12 w-auto"
           />

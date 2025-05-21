@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { features } from '@/data/features';
+import SectionTitle from '@/components/ui/section-title';
 
 const FeaturesSection: React.FC = () => {
   const { t } = useTranslation();
@@ -8,10 +9,10 @@ const FeaturesSection: React.FC = () => {
   return (
     <section className="py-16 bg-aheu-neutral-light">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{t('features.sectionTitle')}</h2>
-          <p className="section-subtitle">{t('features.sectionSubtitle')}</p>
-        </div>
+        <SectionTitle 
+          title={t('features.sectionTitle')} 
+          subtitle={t('features.sectionSubtitle')}
+        />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { programs } from '@/data/programs';
+import SectionTitle from '@/components/ui/section-title';
 
 type ProgramLevel = 'all' | 'bachelor' | 'master' | 'phd';
 
@@ -16,10 +17,10 @@ const ProgramsSection: React.FC = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{t('programs.sectionTitle')}</h2>
-          <p className="section-subtitle">{t('programs.sectionSubtitle')}</p>
-        </div>
+        <SectionTitle 
+          title={t('programs.sectionTitle')} 
+          subtitle={t('programs.sectionSubtitle')}
+        />
         
         {/* Program Filter Tabs */}
         <div className="flex flex-wrap justify-center space-x-2 mb-8">

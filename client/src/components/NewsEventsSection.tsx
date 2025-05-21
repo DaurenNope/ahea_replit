@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { newsItems, upcomingEvents } from '@/data/news';
 import { formatDate } from '@/lib/utils';
+import SectionTitle from '@/components/ui/section-title';
 
 const NewsEventsSection: React.FC = () => {
   const { t } = useTranslation();
@@ -10,10 +11,10 @@ const NewsEventsSection: React.FC = () => {
   return (
     <section className="py-16 bg-aheu-neutral-light">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{t('newsEvents.sectionTitle')}</h2>
-          <p className="section-subtitle">{t('newsEvents.sectionSubtitle')}</p>
-        </div>
+        <SectionTitle 
+          title={t('newsEvents.sectionTitle')} 
+          subtitle={t('newsEvents.sectionSubtitle')}
+        />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* News Items */}
