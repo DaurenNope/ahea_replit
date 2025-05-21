@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LanguageSwitcher: React.FC = () => {
+interface LanguageSwitcherProps {
+  darkMode?: boolean;
+}
+
+const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ darkMode = false }) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language || 'en';
   
@@ -16,7 +20,9 @@ const LanguageSwitcher: React.FC = () => {
         className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
           currentLanguage === 'ru' 
             ? 'bg-primary/10 text-primary font-medium' 
-            : 'hover:bg-gray-100'
+            : darkMode 
+              ? 'text-white hover:bg-white/20' 
+              : 'hover:bg-gray-100'
         }`}
         aria-label="Switch to Russian language"
       >
@@ -27,7 +33,9 @@ const LanguageSwitcher: React.FC = () => {
         className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
           currentLanguage === 'kz' 
             ? 'bg-primary/10 text-primary font-medium' 
-            : 'hover:bg-gray-100'
+            : darkMode 
+              ? 'text-white hover:bg-white/20' 
+              : 'hover:bg-gray-100'
         }`}
         aria-label="Switch to Kazakh language"
       >
@@ -38,7 +46,9 @@ const LanguageSwitcher: React.FC = () => {
         className={`text-sm px-1.5 py-0.5 rounded-md transition-colors ${
           currentLanguage === 'en' 
             ? 'bg-primary/10 text-primary font-medium' 
-            : 'hover:bg-gray-100'
+            : darkMode 
+              ? 'text-white hover:bg-white/20' 
+              : 'hover:bg-gray-100'
         }`}
         aria-label="Switch to English language"
       >

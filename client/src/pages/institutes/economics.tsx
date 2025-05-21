@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/SectionTitle';
 import Layout from '@/components/Layout';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const EconomicsInstitutePage: React.FC = () => {
   const { t } = useTranslation();
@@ -16,106 +17,41 @@ const EconomicsInstitutePage: React.FC = () => {
     <Layout>
       {/* Hero Section */}
       <section className={`relative py-20 md:py-28 bg-gradient-to-br ${primaryColor} text-white overflow-hidden`}>
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-10 top-1/4 w-40 h-40 rounded-full bg-white/5 blur-3xl"></div>
-          <div className="absolute right-0 bottom-1/3 w-60 h-60 rounded-full bg-white/10 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" className="w-full h-full">
+            <g fill="none" stroke="currentColor" strokeWidth="1">
+              <path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"></path>
+              <path d="M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764"></path>
+              <path d="M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880"></path>
+              <path d="M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382"></path>
+              <path d="M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269"></path>
+            </g>
+          </svg>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t('institutes.economics.name')}
-            </motion.h1>
+            </h1>
             
-            <motion.p 
-              className="text-lg md:text-xl opacity-90 max-w-3xl mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {t('institutes.economics.shortDescription')}
-            </motion.p>
+            <p className="text-lg md:text-xl opacity-90 max-w-3xl mb-8">
+              {t('institutes.economics.description')}
+            </p>
             
-            <motion.div 
-              className="flex flex-wrap gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <a href="#about" className="btn-white">
-                {t('common.learnMore')}
-              </a>
+            <div className="flex flex-wrap gap-4 mt-8">
               <a href="/programs?institute=economics" className="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded font-medium transition-colors">
-                {t('institutes.viewAllPrograms')}
+                {t('institutes.viewPrograms')}
               </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      
-      {/* About the Institute */}
-      <section id="about" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title={t('institutes.economics.shortName')} 
-            subtitle={t('institutes.economics.description1')}
-            centered={true}
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-            <div>
-              <p className="text-lg text-aheu-neutral-darker mb-6">
-                {t('institutes.economics.description2')}
-              </p>
-              
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">{t('institutes.keyFocusAreas')}</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <div className={`mt-1 mr-3 w-4 h-4 rounded-full ${secondaryColor} flex-shrink-0`}></div>
-                    <span>{t('institutes.economics.focusAreas.area1')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className={`mt-1 mr-3 w-4 h-4 rounded-full ${secondaryColor} flex-shrink-0`}></div>
-                    <span>{t('institutes.economics.focusAreas.area2')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className={`mt-1 mr-3 w-4 h-4 rounded-full ${secondaryColor} flex-shrink-0`}></div>
-                    <span>{t('institutes.economics.focusAreas.area3')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className={`mt-1 mr-3 w-4 h-4 rounded-full ${secondaryColor} flex-shrink-0`}></div>
-                    <span>{t('institutes.economics.focusAreas.area4')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className={`mt-1 mr-3 w-4 h-4 rounded-full ${secondaryColor} flex-shrink-0`}></div>
-                    <span>{t('institutes.economics.focusAreas.area5')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="relative rounded-xl overflow-hidden h-80 md:h-full">
-              <img 
-                src="/images/institutes/economics-institute.jpg" 
-                alt={t('institutes.economics.imageAlt')} 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = '/images/placeholders/institute-placeholder.jpg';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+              <a href="#faculty" className="border border-white text-white hover:bg-white/10 px-6 py-3 rounded font-medium transition-colors">
+                {t('institutes.meetFaculty')}
+              </a>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Quick Facts */}
+      {/* Quick Facts Section */}
       <section className={`py-16 md:py-20 bg-gray-50`}>
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
@@ -127,7 +63,11 @@ const EconomicsInstitutePage: React.FC = () => {
               <div className={`w-16 h-16 rounded-full ${secondaryColor} text-white flex items-center justify-center mx-auto mb-4`}>
                 <i className="fas fa-book text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2">14</h3>
+              <AnimatedCounter 
+                end={14} 
+                className="text-xl font-semibold mb-2"
+                duration={2000}
+              />
               <p className="text-gray-600">{t('institutes.programsOffered')}</p>
             </div>
             
@@ -135,7 +75,12 @@ const EconomicsInstitutePage: React.FC = () => {
               <div className={`w-16 h-16 rounded-full ${secondaryColor} text-white flex items-center justify-center mx-auto mb-4`}>
                 <i className="fas fa-user-graduate text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2">3,200+</h3>
+              <AnimatedCounter 
+                end={3200} 
+                suffix="+" 
+                className="text-xl font-semibold mb-2"
+                duration={2000}
+              />
               <p className="text-gray-600">{t('institutes.students')}</p>
             </div>
             
@@ -143,43 +88,102 @@ const EconomicsInstitutePage: React.FC = () => {
               <div className={`w-16 h-16 rounded-full ${secondaryColor} text-white flex items-center justify-center mx-auto mb-4`}>
                 <i className="fas fa-chalkboard-teacher text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2">135</h3>
+              <AnimatedCounter 
+                end={135} 
+                className="text-xl font-semibold mb-2"
+                duration={2000}
+              />
               <p className="text-gray-600">{t('institutes.faculty')}</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 text-center shadow-sm">
               <div className={`w-16 h-16 rounded-full ${secondaryColor} text-white flex items-center justify-center mx-auto mb-4`}>
-                <i className="fas fa-calendar-alt text-2xl"></i>
+                <i className="fas fa-chart-line text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2">1997</h3>
-              <p className="text-gray-600">{t('institutes.established')}</p>
+              <AnimatedCounter 
+                end={92} 
+                suffix="%" 
+                className="text-xl font-semibold mb-2"
+                duration={2000}
+              />
+              <p className="text-gray-600">{t('institutes.employmentRate')}</p>
             </div>
           </div>
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t('institutes.callToAction.title')}
-          </h2>
-          <p className="text-lg text-aheu-neutral-darker max-w-3xl mx-auto mb-10">
-            {t('institutes.callToAction.description')}
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a 
-              href="/programs" 
-              className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded font-medium transition-colors"
-            >
-              {t('institutes.callToAction.primaryButton')}
-            </a>
-            <a 
-              href="/contact" 
-              className="border-2 border-gray-300 hover:border-gray-400 px-6 py-3 rounded font-medium transition-colors"
-            >
-              {t('institutes.callToAction.secondaryButton')}
-            </a>
+      {/* About the Institute */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title={t('institutes.economics.about.title')} 
+            subtitle={t('institutes.economics.about.subtitle')} 
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-12">
+            <div>
+              <p className="text-lg text-aheu-neutral-darker mb-6">
+                {t('institutes.economics.about.p1')}
+              </p>
+              <p className="text-lg text-aheu-neutral-darker mb-6">
+                {t('institutes.economics.about.p2')}
+              </p>
+              <div className="flex flex-col md:flex-row gap-4 mt-8">
+                <div className="bg-blue-50 p-6 rounded-lg flex items-start">
+                  <i className="fas fa-chart-pie text-2xl text-blue-700 mt-1 mr-4"></i>
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">{t('institutes.economics.about.feature1.title')}</h4>
+                    <p className="text-aheu-neutral-darker">{t('institutes.economics.about.feature1.description')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div className="bg-blue-50 p-6 rounded-lg flex items-start mb-6">
+                <i className="fas fa-laptop-code text-2xl text-blue-700 mt-1 mr-4"></i>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">{t('institutes.economics.about.feature2.title')}</h4>
+                  <p className="text-aheu-neutral-darker">{t('institutes.economics.about.feature2.description')}</p>
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-lg flex items-start mb-6">
+                <i className="fas fa-globe text-2xl text-blue-700 mt-1 mr-4"></i>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">{t('institutes.economics.about.feature3.title')}</h4>
+                  <p className="text-aheu-neutral-darker">{t('institutes.economics.about.feature3.description')}</p>
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-lg flex items-start">
+                <i className="fas fa-briefcase text-2xl text-blue-700 mt-1 mr-4"></i>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">{t('institutes.economics.about.feature4.title')}</h4>
+                  <p className="text-aheu-neutral-darker">{t('institutes.economics.about.feature4.description')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Call to Action */}
+      <section className={`py-16 md:py-20 bg-gradient-to-br ${primaryColor} text-white overflow-hidden relative`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('institutes.economics.cta.title')}</h2>
+            <p className="text-lg md:text-xl mb-8 opacity-90">
+              {t('institutes.economics.cta.description')}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="/admissions" className="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded font-medium transition-colors">
+                {t('institutes.economics.cta.primaryButton')}
+              </a>
+              <a href="/programs?institute=economics" className="border border-white text-white hover:bg-white/10 px-6 py-3 rounded font-medium transition-colors">
+                {t('institutes.economics.cta.secondaryButton')}
+              </a>
+            </div>
           </div>
         </div>
       </section>
