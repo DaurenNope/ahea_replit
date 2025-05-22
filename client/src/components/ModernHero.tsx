@@ -151,7 +151,7 @@ const ModernHero: React.FC<ModernHeroProps> = ({ title, subtitle }) => {
           {/* Hero text section - slogan as title */}
           <div className="relative z-20 text-center w-full">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white max-w-4xl mx-auto font-light drop-shadow-lg px-2 tracking-wide leading-relaxed">
-              AHEU — a place to <span className="text-white font-normal italic">A</span>chieve, <span className="text-white font-normal italic">H</span>ighlight, <span className="text-white font-normal italic">E</span>xplore, <span className="text-white font-normal italic">U</span>nite
+              AHEU — a place to <span className="text-white font-normal italic">A</span>chieve, <span className="text-white font-normal italic">H</span>ead, <span className="text-white font-normal italic">E</span>xplore, <span className="text-white font-normal italic">U</span>nite
             </h1>
           </div>
 
