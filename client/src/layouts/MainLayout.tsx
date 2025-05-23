@@ -8,12 +8,14 @@ interface MainLayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  hasTransparentHeader?: boolean;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ 
   children, 
   title = 'AHEU - Almaty Humanitarian Economic University',
-  description = 'Leading educational institution in Kazakhstan offering diverse academic programs through three specialized institutes.'
+  description = 'Leading educational institution in Kazakhstan offering diverse academic programs through three specialized institutes.',
+  hasTransparentHeader = false
 }) => {
   const { t, i18n } = useTranslation();
   
@@ -38,7 +40,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       </Helmet>
       <div className="flex flex-col min-h-screen overflow-x-hidden">
         <Header />
-        <main className="flex-grow">
+        <main className={`flex-grow ${hasTransparentHeader ? '' : 'pt-20'}`}>
           {children}
         </main>
         <Footer />

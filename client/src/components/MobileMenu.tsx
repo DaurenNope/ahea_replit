@@ -58,7 +58,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         <div className="py-4 px-5 border-b border-gray-100 bg-gray-50">
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium text-gray-500">{t('common.selectLanguage', 'Select Language')}</span>
-            <LanguageSwitcher darkMode={false} />
+            <LanguageSwitcher darkMode={false} compact={true} />
           </div>
         </div>
       )}

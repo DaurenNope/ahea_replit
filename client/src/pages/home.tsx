@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   const { t } = useTranslation();
   
   return (
-    <MainLayout>
+    <MainLayout hasTransparentHeader={true}>
       <ModernHero 
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
